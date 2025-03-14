@@ -29,65 +29,46 @@ const theme = createTheme({
   },
 });
 
-// interface ISectionRefs {
-//   id: number;
-//   ref: React.RefObject<HTMLDivElement | null>;
-//   tip: string;
-// }
-
 interface ISectionRefs {
+  id: number;
   ref: React.RefObject<HTMLDivElement | null>;
   tip: string;
 }
 
-// const sectionRefs: ISectionRefs[] = [
-//   { id: 0, ref: React.createRef<HTMLDivElement>(), tip: 'Головна' },
-//   { id: 1, ref: React.createRef<HTMLDivElement>(), tip: 'Про нас' },
-//   { id: 2, ref: React.createRef<HTMLDivElement>(), tip: 'Агроасистент' },
-//   { id: 3, ref: React.createRef<HTMLDivElement>(), tip: 'Технологічні карти' },
-//   { id: 4, ref: React.createRef<HTMLDivElement>(), tip: 'Екосистема' },
-//   { id: 5, ref: React.createRef<HTMLDivElement>(), tip: 'Місії та цілі' },
-//   { id: 6, ref: React.createRef<HTMLDivElement>(), tip: 'Переваги' },
-//   { id: 7, ref: React.createRef<HTMLDivElement>(), tip: 'Наші цінності' },
-//   { id: 8, ref: React.createRef<HTMLDivElement>(), tip: 'Партнери' },
-//   { id: 9, ref: React.createRef<HTMLDivElement>(), tip: 'Команда' },
-//   { id: 10, ref: React.createRef<HTMLDivElement>(), tip: 'Контакти' },
-// ];
-
 const sectionRefs: ISectionRefs[] = [
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Головна' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Про нас' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Агроасистент' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Технологічні карти' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Екосистема' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Місії та цілі' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Переваги' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Наші цінності' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Партнери' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Команда' },
-  { ref: React.createRef<HTMLDivElement>(), tip: 'Контакти' },
+  { id: 0, ref: React.createRef<HTMLDivElement>(), tip: 'Головна' },
+  { id: 1, ref: React.createRef<HTMLDivElement>(), tip: 'Про нас' },
+  { id: 2, ref: React.createRef<HTMLDivElement>(), tip: 'Агроасистент' },
+  { id: 3, ref: React.createRef<HTMLDivElement>(), tip: 'Технологічні карти' },
+  { id: 4, ref: React.createRef<HTMLDivElement>(), tip: 'Екосистема' },
+  { id: 5, ref: React.createRef<HTMLDivElement>(), tip: 'Місії та цілі' },
+  { id: 6, ref: React.createRef<HTMLDivElement>(), tip: 'Переваги' },
+  { id: 7, ref: React.createRef<HTMLDivElement>(), tip: 'Наші цінності' },
+  { id: 8, ref: React.createRef<HTMLDivElement>(), tip: 'Партнери' },
+  { id: 9, ref: React.createRef<HTMLDivElement>(), tip: 'Команда' },
+  { id: 10, ref: React.createRef<HTMLDivElement>(), tip: 'Контакти' },
 ];
 
-// interface IMenuItem {
-//   id: number;
-//   nameUa: string;
-//   namePl: string;
-//   nameJp: string;
-//   ref: React.RefObject<HTMLDivElement | null>;
-// }
+interface IMenuItem {
+  id: number;
+  nameUa: string;
+  namePl: string;
+  nameJp: string;
+  ref: React.RefObject<HTMLDivElement | null>;
+}
 
-// const menuItems: IMenuItem[] = [
-//   { id: 1, nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас', ref: React.createRef<HTMLDivElement>() },
-//   { id: 2, nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI', ref: React.createRef<HTMLDivElement>() },
-//   { id: 3, nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти', ref: React.createRef<HTMLDivElement>() },
-//   { id: 4, nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема', ref: React.createRef<HTMLDivElement>() },
-//   { id: 5, nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі', ref: React.createRef<HTMLDivElement>() },
-//   { id: 6, nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги', ref: React.createRef<HTMLDivElement>() },
-//   { id: 7, nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності', ref: React.createRef<HTMLDivElement>() },
-//   { id: 8, nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери', ref: React.createRef<HTMLDivElement>() },
-//   { id: 9, nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда', ref: React.createRef<HTMLDivElement>() },
-//   { id: 10, nameUa: 'Контакти', namePl: 'Контакти', nameJp: 'Контакти', ref: React.createRef<HTMLDivElement>() }
-// ];
+const menuItems: IMenuItem[] = [
+  { id: 1, nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас', ref: React.createRef<HTMLDivElement>() },
+  { id: 2, nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI', ref: React.createRef<HTMLDivElement>() },
+  { id: 3, nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти', ref: React.createRef<HTMLDivElement>() },
+  { id: 4, nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема', ref: React.createRef<HTMLDivElement>() },
+  { id: 5, nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі', ref: React.createRef<HTMLDivElement>() },
+  { id: 6, nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги', ref: React.createRef<HTMLDivElement>() },
+  { id: 7, nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності', ref: React.createRef<HTMLDivElement>() },
+  { id: 8, nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери', ref: React.createRef<HTMLDivElement>() },
+  { id: 9, nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда', ref: React.createRef<HTMLDivElement>() },
+  { id: 10, nameUa: 'Контакти', namePl: 'Контакти', nameJp: 'Контакти', ref: React.createRef<HTMLDivElement>() }
+];
 
 const languagesList = ['UA', 'EN', 'JP'];
 
@@ -148,9 +129,9 @@ function App() {
     }, 15); // Швидкість анімації
   };
 
-  // useEffect(() => {
-  //   smoothScrollToTop();
-  // }, []);
+  useEffect(() => {
+    smoothScrollToTop();
+  }, []);
 
   return (
     <Router>
@@ -202,17 +183,6 @@ function App() {
           <main>
             <SideNav sectionRefs={sectionRefs} />
             <div className="content">
-              {/* <General ref={sectionRefs.find(x => x.id === 0)!.ref} />
-              <AboutUs ref={sectionRefs.find(x => x.id === 1)!.ref} />
-              <AgroAi ref={sectionRefs.find(x => x.id === 2)!.ref} />
-              <TechCard ref={sectionRefs.find(x => x.id === 3)!.ref} />
-              <Ecosystem ref={sectionRefs.find(x => x.id === 4)!.ref} />
-              <Mission ref={sectionRefs.find(x => x.id === 5)!.ref} />
-              <Advantages ref={sectionRefs.find(x => x.id === 6)!.ref} />
-              <Values ref={sectionRefs.find(x => x.id === 7)!.ref} />
-              <Partners ref={sectionRefs.find(x => x.id === 8)!.ref} />
-              <Command ref={sectionRefs.find(x => x.id === 9)!.ref} />
-              <Footer ref={sectionRefs.find(x => x.id === 10)!.ref} /> */}
               <General ref={sectionRefs[0].ref} />
               <AboutUs ref={sectionRefs[1].ref} />
               <AgroAi ref={sectionRefs[2].ref} />
@@ -254,11 +224,11 @@ function App() {
               onClick={handleCloseMenuOverlay}
               className='menu_overlay'
             >
-              {/* <div className='menu_container'>
+              <div className='menu_container'>
                 {menuItems.map((menuItem, index) =>
                   (<div ref={sectionRefs.find(x => x.id == index + 1)?.ref} className='menu_item'>{menuItem.nameUa}</div>)
                 )}
-              </div> */}
+              </div>
             </Backdrop>
           </main>
         </div>
