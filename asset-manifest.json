@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/sperow_landing/static/css/main.5e22573a.css",
+    "main.js": "/sperow_landing/static/js/main.cbe04ef8.js",
+    "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
+    "static/media/Raleway-SemiBold.ttf": "/sperow_landing/static/media/Raleway-SemiBold.bd43d9472ee0c9fbe785.ttf",
+    "static/media/Raleway-Medium.ttf": "/sperow_landing/static/media/Raleway-Medium.0de5925709848b7e64c5.ttf",
+    "static/media/Raleway-Regular.ttf": "/sperow_landing/static/media/Raleway-Regular.d9219d8a361ac3530c7e.ttf",
+    "static/media/logo_name.svg": "/sperow_landing/static/media/logo_name.0b19040ac852303608b17284c5af10b2.svg",
+    "static/media/logo_light.svg": "/sperow_landing/static/media/logo_light.6a92d9acda4944cd9d4f8c793a693e93.svg",
+    "index.html": "/sperow_landing/index.html",
+    "main.5e22573a.css.map": "/sperow_landing/static/css/main.5e22573a.css.map",
+    "main.cbe04ef8.js.map": "/sperow_landing/static/js/main.cbe04ef8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e22573a.css",
+    "static/js/main.cbe04ef8.js"
+  ]
+}
