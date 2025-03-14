@@ -54,20 +54,19 @@ interface IMenuItem {
   nameUa: string;
   namePl: string;
   nameJp: string;
-  ref: React.RefObject<HTMLDivElement | null>;
 }
 
 const menuItems: IMenuItem[] = [
-  { id: 1, nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас', ref: React.createRef<HTMLDivElement>() },
-  { id: 2, nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI', ref: React.createRef<HTMLDivElement>() },
-  { id: 3, nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти', ref: React.createRef<HTMLDivElement>() },
-  { id: 4, nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема', ref: React.createRef<HTMLDivElement>() },
-  { id: 5, nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі', ref: React.createRef<HTMLDivElement>() },
-  { id: 6, nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги', ref: React.createRef<HTMLDivElement>() },
-  { id: 7, nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності', ref: React.createRef<HTMLDivElement>() },
-  { id: 8, nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери', ref: React.createRef<HTMLDivElement>() },
-  { id: 9, nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда', ref: React.createRef<HTMLDivElement>() },
-  { id: 10, nameUa: 'Контакти', namePl: 'Контакти', nameJp: 'Контакти', ref: React.createRef<HTMLDivElement>() }
+  { id: 1, nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас' },
+  { id: 2, nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI' },
+  { id: 3, nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти', },
+  { id: 4, nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема' },
+  { id: 5, nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі' },
+  { id: 6, nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги' },
+  { id: 7, nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності' },
+  { id: 8, nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери' },
+  { id: 9, nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда' },
+  { id: 10, nameUa: 'Контакти', namePl: 'Контакти', nameJp: 'Контакти' }
 ];
 
 const languagesList = ['UA', 'EN', 'JP'];
@@ -132,6 +131,38 @@ function App() {
   useEffect(() => {
     smoothScrollToTop();
   }, []);
+
+  const handleClickOnMenu = (menuItem: IMenuItem) => {
+    const sectionRef = sectionRefs.find(x => x.id === menuItem.id);
+    // debugger;
+    // if (sectionRef && sectionRef.ref && sectionRef.ref.current) {
+    //   sectionRef.ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    //   const scrollPosition = window.scrollY + window.innerHeight / 2; // Центр екрану
+    //   const element = sectionRef.ref.current;
+    //   if (element) {
+    //     debugger;
+    //     const offsetTop = element.offsetTop;
+    //     const offsetBottom = offsetTop + element.offsetHeight;
+    //     if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+    //       if (activeSection !== sectionRef.id) {
+    //         setActiveSection(sectionRef.id);
+
+    //         // Прокрутка до нижньої межі секції
+    //         window.scrollTo({
+    //           top: offsetBottom - window.innerHeight, // Початок секції залишається нагорі екрану
+    //           behavior: 'smooth', // Плавна прокрутка
+    //         });
+    //       }
+
+    //       window.scrollTo({
+    //         top: offsetBottom - window.innerHeight, // Початок секції залишається нагорі екрану
+    //         behavior: 'smooth', // Плавна прокрутка
+    //       });
+    //     }
+    //   }
+    // }
+  };
 
   return (
     <Router>
@@ -225,8 +256,8 @@ function App() {
               className='menu_overlay'
             >
               <div className='menu_container'>
-                {menuItems.map((menuItem, index) =>
-                  (<div ref={sectionRefs.find(x => x.id == index + 1)?.ref} className='menu_item'>{menuItem.nameUa}</div>)
+                {menuItems.map((menuItem) =>
+                  (<div onClick={() => handleClickOnMenu(menuItem)} className='menu_item'>{menuItem.nameUa}</div>)
                 )}
               </div>
             </Backdrop>
