@@ -39,7 +39,7 @@ interface ISectionRefs {
 
 const sectionRefs: ISectionRefs[] = [
   { id: 1, ref: React.createRef<HTMLDivElement>(), tip: 'Головна', nameUa: 'Головна', namePl: 'Головна', nameJp: 'Головна' },
-  { id: 2, ref: React.createRef<HTMLDivElement>(), tip: 'Про нас', nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас'  },
+  { id: 2, ref: React.createRef<HTMLDivElement>(), tip: 'Про нас', nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас' },
   { id: 3, ref: React.createRef<HTMLDivElement>(), tip: 'Агроасистент', nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI' },
   { id: 4, ref: React.createRef<HTMLDivElement>(), tip: 'Технологічні карти', nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти' },
   { id: 5, ref: React.createRef<HTMLDivElement>(), tip: 'Екосистема', nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема' },
@@ -106,7 +106,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (sectionRefs && sectionRefs.length){
+    if (sectionRefs && sectionRefs.length) {
       scrollToSection(1);
     }
 
@@ -140,7 +140,9 @@ function App() {
           <header className="App-header">
             <div className="header">
               <div className="header_left_side">
-                <img onClick={() => scrollToSection(1)} className="logo" src={logoLight} alt="Sperow Logo" />
+                <div className='logo_header_container'>
+                  <img onClick={() => scrollToSection(1)} className="logo" src={logoLight} alt="Sperow Logo" />
+                </div>
               </div>
               <div className="header_right_side">
                 <div className="dropdown_lang_container" ref={dropdownRef}>
