@@ -1,7 +1,28 @@
 import React, { forwardRef } from 'react';
+import YouTube from 'react-youtube';
 
 const AboutUs = forwardRef<HTMLDivElement>((props, ref) => {
-  return <div ref={ref} className="about_us_page">Вміст About Us</div>;
+  const opts = {
+    width: '80%',
+    height: '800px',
+    playerVars: {
+      autoplay: 0,
+    },
+  };
+
+  const onReady = (event: any) => {
+    event.target.pauseVideo();
+  };
+
+  return (
+    <div ref={ref} className="about_us_page">
+      <YouTube
+        videoId="xvGCIXyx1zU"
+        opts={opts}
+        onReady={onReady}
+      />
+    </div>
+  );
 });
 
 export default AboutUs;

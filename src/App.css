@@ -482,3 +482,8 @@ body {
     }
   }
 }
+
+.about_us_page div {
+  text-align-last: center;
+  padding-top: 60px;
+}
