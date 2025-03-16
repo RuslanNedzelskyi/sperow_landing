@@ -204,20 +204,40 @@ body {
 
   .about_us_page {
     background-color: #FEF5E2;
-    height: 100%;
-    min-height: 100vh;
+    height: 90%;
+    min-height: 90vh;
   }
 
   .agro_ai_page {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
+    background-color: #043129 !important;
   }
 
   .tech_card_page {
+    display: flex;
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
+    background-color: #043129 !important;
+
+    .tech_card_content_container{
+      .tech_card_title{
+        color: #FFBC35;
+      }
+      .tech_card_text_container{
+        color: #FEF5E2;
+
+        .tech_card_text{
+
+        }
+      }
+    }
+
+    .tech_card_img_container{
+
+    }
   }
 
   .ecosystem_page{
@@ -503,5 +523,5 @@ body {
 
 .about_us_page div {
   text-align-last: center;
-  padding-top: 80px;
+  padding-top: 55px;
 }
