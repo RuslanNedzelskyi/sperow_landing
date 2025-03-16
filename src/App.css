@@ -458,7 +458,7 @@ body {
     background-color: #043129;
     border-radius: 20px;
     width: 350px;
-    height: 400px;
+    height: 470px;
     align-content: center;
     padding-left: 35px;
     position: absolute;
@@ -466,7 +466,7 @@ body {
     right: 100px;
 
     .menu_item {
-      font-size: 26px;
+      font-size: 22px;
       color: #FEF5E2;
       font-family: 'Raleway Regular';
       cursor: pointer;
