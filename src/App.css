@@ -73,7 +73,7 @@ body {
 
       .top_button_testing_container {
         padding-right: 45px;
-        padding-left: 40px;
+        padding-left: 35px;
         align-content: center;
 
         .top_button_testing {
@@ -190,14 +190,14 @@ body {
       text-align: center;
 
       .logo-name-container {
-        padding-top: 300px;
+        padding-top: 280px;
         font-size: 20px;
       }
 
       .logo_sub_name {
         font-family: 'Raleway SemiBold';
-        font-size: 36px;
-        padding-top: 50px;
+        font-size: 32px;
+        padding-top: 40px;
       }
     }
   }
@@ -474,20 +474,21 @@ body {
   .menu_container {
     background-color: #043129;
     border-radius: 20px;
-    width: 350px;
-    height: 470px;
+    width: 340px;
+    height: 410px;
     align-content: center;
     padding-left: 35px;
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 100px;
 
     .menu_item {
-      font-size: 22px;
+      font-size: 20px;
       color: #FEF5E2;
       font-family: 'Raleway Regular';
       cursor: pointer;
-      height: 40px;
+      height: 35px;
+      align-content: center;
 
       :hover {
         color: #FFBC35 !important;
