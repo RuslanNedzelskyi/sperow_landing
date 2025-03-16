@@ -212,7 +212,7 @@ body {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
-    background-color: #043129 !important;
+    /* background-color: #043129 !important; */
   }
 
   .tech_card_page {
