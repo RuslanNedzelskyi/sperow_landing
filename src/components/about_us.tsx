@@ -4,7 +4,7 @@ import YouTube from 'react-youtube';
 const AboutUs = forwardRef<HTMLDivElement>((props, ref) => {
   const opts = {
     width: '80%',
-    height: '800px',
+    height: '700px',
     playerVars: {
       autoplay: 0,
     },

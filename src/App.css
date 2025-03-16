@@ -197,52 +197,62 @@ body {
 
   .about_us_page {
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .agro_ai_page {
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .tech_card_page {
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .ecosystem_page{
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .mission_page{
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .advantages_page{
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .values_page{
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .partners_page{
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .command_page{
     background-color: #FEF5E2;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
   }
 
   .footer_page {
     background-color: #043129;
-    height: 50vh;
+    height: 50%;
+    min-height: 50vh;
   }
 }
 
