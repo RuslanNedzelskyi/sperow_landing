@@ -72,9 +72,9 @@ body {
         .top_button_testing {
           border-radius: 20px;
           height: 55px;
-          width: 300px;
+          width: 250px;
           background-color: #FEF5E2;
-          font-size: 26px;
+          font-size: 24px;
           color: #043129;
           font-family: 'Raleway Regular';
           cursor: pointer;
@@ -98,9 +98,9 @@ body {
         .top_button_menu {
           border-radius: 20px;
           height: 55px;
-          width: 200px;
+          width: 160px;
           background-color: #FEF5E2;
-          font-size: 26px;
+          font-size: 24px;
           color: #043129;
           font-family: 'Raleway Regular';
           cursor: pointer;
@@ -109,11 +109,11 @@ body {
 
           .button_menu_with_hamburger {
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-evenly;
             display: flex;
 
             .menu_icon {
-              font-size: 36px;
+              font-size: 35px;
             }
 
             .MuiSvgIcon-root {

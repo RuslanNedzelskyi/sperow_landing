@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter as Router } from 'react-router-dom';
 import General from './components/general';
 import AboutUs from './components/about_us';
-import SideNav from './components/side_nav';
 import AgroAi from './components/agro_ai';
 import Footer from './components/footer';
 import logoLight from './assets/images/logo_light.svg';
@@ -33,40 +32,23 @@ interface ISectionRefs {
   id: number;
   ref: React.RefObject<HTMLDivElement | null>;
   tip: string;
-}
-
-const sectionRefs: ISectionRefs[] = [
-  { id: 0, ref: React.createRef<HTMLDivElement>(), tip: 'Головна' },
-  { id: 1, ref: React.createRef<HTMLDivElement>(), tip: 'Про нас' },
-  { id: 2, ref: React.createRef<HTMLDivElement>(), tip: 'Агроасистент' },
-  { id: 3, ref: React.createRef<HTMLDivElement>(), tip: 'Технологічні карти' },
-  { id: 4, ref: React.createRef<HTMLDivElement>(), tip: 'Екосистема' },
-  { id: 5, ref: React.createRef<HTMLDivElement>(), tip: 'Місії та цілі' },
-  { id: 6, ref: React.createRef<HTMLDivElement>(), tip: 'Переваги' },
-  { id: 7, ref: React.createRef<HTMLDivElement>(), tip: 'Наші цінності' },
-  { id: 8, ref: React.createRef<HTMLDivElement>(), tip: 'Партнери' },
-  { id: 9, ref: React.createRef<HTMLDivElement>(), tip: 'Команда' },
-  { id: 10, ref: React.createRef<HTMLDivElement>(), tip: 'Контакти' },
-];
-
-interface IMenuItem {
-  id: number;
   nameUa: string;
   namePl: string;
   nameJp: string;
 }
 
-const menuItems: IMenuItem[] = [
-  { id: 1, nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас' },
-  { id: 2, nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI' },
-  { id: 3, nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти', },
-  { id: 4, nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема' },
-  { id: 5, nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі' },
-  { id: 6, nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги' },
-  { id: 7, nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності' },
-  { id: 8, nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери' },
-  { id: 9, nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда' },
-  { id: 10, nameUa: 'Контакти', namePl: 'Контакти', nameJp: 'Контакти' }
+const sectionRefs: ISectionRefs[] = [
+  { id: 1, ref: React.createRef<HTMLDivElement>(), tip: 'Головна', nameUa: 'Головна', namePl: 'Головна', nameJp: 'Головна' },
+  { id: 2, ref: React.createRef<HTMLDivElement>(), tip: 'Про нас', nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас'  },
+  { id: 3, ref: React.createRef<HTMLDivElement>(), tip: 'Агроасистент', nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI' },
+  { id: 4, ref: React.createRef<HTMLDivElement>(), tip: 'Технологічні карти', nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти' },
+  { id: 5, ref: React.createRef<HTMLDivElement>(), tip: 'Екосистема', nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема' },
+  { id: 6, ref: React.createRef<HTMLDivElement>(), tip: 'Місії та цілі', nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі' },
+  { id: 7, ref: React.createRef<HTMLDivElement>(), tip: 'Переваги', nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги' },
+  { id: 8, ref: React.createRef<HTMLDivElement>(), tip: 'Наші цінності', nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності' },
+  { id: 9, ref: React.createRef<HTMLDivElement>(), tip: 'Партнери', nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери' },
+  { id: 10, ref: React.createRef<HTMLDivElement>(), tip: 'Команда', nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда' },
+  { id: 11, ref: React.createRef<HTMLDivElement>(), tip: 'Контакти', nameUa: 'Контакти', namePl: 'Контакти', nameJp: 'Контакти' },
 ];
 
 const languagesList = ['UA', 'EN', 'JP'];
@@ -76,6 +58,7 @@ function App() {
   const [selectedLanguage, setSelectedLanguage] = useState('UA');
   const [menuLangOpen, setMenuLangOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState<number | null>(null);
 
   const handleCloseMenuOverlay = () => {
     setOpenMenu(!openMenu);
@@ -100,6 +83,38 @@ function App() {
     setMenuLangOpen(false);
   };
 
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+    sectionRefs.forEach((section) => {
+      const element = section.ref.current;
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetBottom = offsetTop + element.offsetHeight;
+        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom && activeSection !== section.id) {
+          setActiveSection(section.id);
+        }
+      }
+    });
+  };
+
+  const scrollToSection = (id: number) => {
+    const section = sectionRefs.find((s) => s.id === id);
+    if (section?.ref.current) {
+      section.ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(id);
+    }
+  };
+
+  useEffect(() => {
+    if (sectionRefs && sectionRefs.length){
+      scrollToSection(1);
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -117,53 +132,6 @@ function App() {
     };
   }, [menuLangOpen, selectedLanguage]);
 
-  const smoothScrollToTop = function () {
-    const scrollStep = window.scrollY / 20; // Крок анімації
-    const scrollInterval = setInterval(() => {
-      if (window.scrollY > 0) {
-        window.scrollBy(0, -scrollStep);
-      } else {
-        clearInterval(scrollInterval);
-      }
-    }, 15); // Швидкість анімації
-  };
-
-  useEffect(() => {
-    smoothScrollToTop();
-  }, []);
-
-  const handleClickOnMenu = (menuItem: IMenuItem) => {
-    const sectionRef = sectionRefs.find(x => x.id === menuItem.id);
-    // debugger;
-    // if (sectionRef && sectionRef.ref && sectionRef.ref.current) {
-    //   sectionRef.ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    //   const scrollPosition = window.scrollY + window.innerHeight / 2; // Центр екрану
-    //   const element = sectionRef.ref.current;
-    //   if (element) {
-    //     debugger;
-    //     const offsetTop = element.offsetTop;
-    //     const offsetBottom = offsetTop + element.offsetHeight;
-    //     if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-    //       if (activeSection !== sectionRef.id) {
-    //         setActiveSection(sectionRef.id);
-
-    //         // Прокрутка до нижньої межі секції
-    //         window.scrollTo({
-    //           top: offsetBottom - window.innerHeight, // Початок секції залишається нагорі екрану
-    //           behavior: 'smooth', // Плавна прокрутка
-    //         });
-    //       }
-
-    //       window.scrollTo({
-    //         top: offsetBottom - window.innerHeight, // Початок секції залишається нагорі екрану
-    //         behavior: 'smooth', // Плавна прокрутка
-    //       });
-    //     }
-    //   }
-    // }
-  };
-
   return (
     <Router>
       <ThemeProvider theme={theme}>
@@ -172,7 +140,7 @@ function App() {
           <header className="App-header">
             <div className="header">
               <div className="header_left_side">
-                <img onClick={smoothScrollToTop} className="logo" src={logoLight} alt="Sperow Logo" />
+                <img onClick={() => scrollToSection(1)} className="logo" src={logoLight} alt="Sperow Logo" />
               </div>
               <div className="header_right_side">
                 <div className="dropdown_lang_container" ref={dropdownRef}>
@@ -212,7 +180,18 @@ function App() {
             </div>
           </header>
           <main>
-            <SideNav sectionRefs={sectionRefs} />
+            <div className={sectionRefs && sectionRefs.length && activeSection && activeSection == sectionRefs[sectionRefs.length - 1].id ? "side-navigation side-navigation_hide" : "side-navigation"}>
+              <ul className="side-navigation__content">
+                {sectionRefs.map((section) => (
+                  <li onClick={() => scrollToSection(section.id)} key={section.id} className={activeSection && activeSection === section.id ? "side-navigation__item side-navigation__item_active" : "side-navigation__item"}>
+                    <a className={activeSection && activeSection == section.id ? "side-navigation__link side-navigation__link_active" : "side-navigation__link"}>
+                      <span className="test">{section.id}</span>
+                      <div className="side-navigation__title">{section.tip}</div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="content">
               <General ref={sectionRefs[0].ref} />
               <AboutUs ref={sectionRefs[1].ref} />
@@ -256,8 +235,8 @@ function App() {
               className='menu_overlay'
             >
               <div className='menu_container'>
-                {menuItems.map((menuItem) =>
-                  (<div onClick={() => handleClickOnMenu(menuItem)} className='menu_item'>{menuItem.nameUa}</div>)
+                {sectionRefs.map((section) =>
+                  (<div onClick={() => scrollToSection(section.id)} className='menu_item'>{section.nameUa}</div>)
                 )}
               </div>
             </Backdrop>
