@@ -229,7 +229,7 @@ body {
         color: #FFBC35;
         font-family: 'Raleway Medium';
         font-style: italic;
-        font-size: 130px;
+        font-size: 120px;
         margin-left: -23px;
         line-height: 120px;
         white-space: nowrap;
@@ -317,7 +317,7 @@ body {
     color: #ffbc35;
     font-family: 'Raleway Medium';
     font-style: italic;
-    font-size: clamp(60px, 10vw, 130px);
+    font-size: clamp(60px, 10vw, 120px);
     /* Адаптивний розмір шрифту */
     line-height: 1.1;
     white-space: nowrap;
