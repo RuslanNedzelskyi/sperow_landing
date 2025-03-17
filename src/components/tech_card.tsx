@@ -14,7 +14,7 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
         activeSlide === 0 ? <span className='tech_card_title'>Технологічні карти</span> :
           activeSlide === 1 ? <span className='tech_card_title'>Моніторинг</span> :
             activeSlide === 2 ? <span className='tech_card_title'>Сівообіг та поля</span> :
-              <span className='tech_card_title'>Погода</span> 
+              <span className='tech_card_title'>SDFsdfsdfsdf</span> 
       }
 
       <div className='tech_card_text_container'>
