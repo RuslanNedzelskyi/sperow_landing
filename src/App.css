@@ -51,7 +51,7 @@ body {
     .header_left_side {
       width: 50%;
 
-      .logo_header_container{
+      .logo_header_container {
         margin-left: 100px;
         cursor: pointer;
         height: 95px;
@@ -62,7 +62,7 @@ body {
           height: 100%;
           width: 100%;
         }
-    
+
       }
     }
 
@@ -216,61 +216,122 @@ body {
   }
 
   .tech_card_page {
-    display: flex;
+
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
     background-color: #043129 !important;
 
-    .tech_card_content_container{
-      .tech_card_title{
-        color: #FFBC35;
+    .tech_card_content_container {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      padding-left: 100px;
+      padding-top: 60px;
+
+      .tech_card_text_container {
+        .tech_card_title {
+          color: #FFBC35;
+          font-family: 'Raleway Medium';
+          font-style: italic;
+          font-size: 130px;
+          margin-left: -23px;
+          line-height: 120px;
+          text-shadow: 0px 4px 4px #000000;
+        }
+
+        .tech_card_sub_text_container {
+          color: #FEF5E2;
+          font-family: 'Raleway Regular';
+          font-size: 30px;
+          width: 515px;
+          padding-top: 50px;
+
+
+          .tech_card_text_item {
+            padding-bottom: 25px;
+
+            .tech_card_text {}
+          }
+        }
       }
-      .tech_card_text_container{
-        color: #FEF5E2;
 
-        .tech_card_text{
+      .tech_card_img_container {
+        align-content: center;
+        padding-top: 140px;
+        margin-left: -100px;
 
+        .logo_card_img {
+          width: 1000px;
+        }
+
+        .menu_slides_container {
+          padding: 10px;
+          display: flex; /* Горизонтальне розміщення */
+          justify-content: center; /* Центрування елементів */
+          gap: 8px; /* Проміжок між елементами */
+          height: 20px; /* Висота контейнера */
+        }
+        
+        .menu-item {
+          background-color: #d9c8a9; /* Колір елементів, схожий на зображення */
+          border-radius: 2px; /* Легке закруглення країв */
+        }
+        
+        /* Різні розміри для кожного елемента */
+        .item-1 {
+          width: 85px; /* Довший прямокутник */
+          height: 10px;
+        }
+        
+        .item-2, .item-3, .item-4 {
+          width: 20px; /* Крапки */
+          height: 10px;
+        }
+        
+        /* Додаткові стилі для імітації слайдера (опціонально) */
+        .menu_slides_container:hover .menu-item {
+          opacity: 0.7; /* Ефект при наведенні */
+        }
+        
+        .menu-item:hover {
+          opacity: 1; /* Підсвітка активного елемента */
         }
       }
     }
-
-    .tech_card_img_container{
-
-    }
   }
 
-  .ecosystem_page{
+  .ecosystem_page {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
   }
 
-  .mission_page{
+  .mission_page {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
   }
 
-  .advantages_page{
+  .advantages_page {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
   }
 
-  .values_page{
+  .values_page {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
   }
 
-  .partners_page{
+  .partners_page {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
   }
 
-  .command_page{
+  .command_page {
     background-color: #FEF5E2;
     height: 100%;
     min-height: 100vh;
