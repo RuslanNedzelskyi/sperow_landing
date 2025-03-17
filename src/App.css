@@ -245,7 +245,7 @@ body {
           font-family: 'Raleway Regular';
           font-size: 28px;
           min-width: 530px;
-          padding-top: 130px;
+          align-content: center;
 
           .tech_card_text_item {
             padding-bottom: 45px;
@@ -277,19 +277,21 @@ body {
             background-color: #FEF5E2;
             border-radius: 5px;
             cursor: pointer;
+            width: 20px;
+            height: 10px;
           }
 
-          .item-1 {
+          .active {
             width: 85px;
             height: 10px;
           }
 
-          .item-2,
+          /* .item-2,
           .item-3,
           .item-4 {
             width: 20px;
             height: 10px;
-          }
+          } */
         }
       }
     }
