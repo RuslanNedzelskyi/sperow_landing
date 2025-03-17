@@ -3,7 +3,7 @@ import TechCard1 from '../assets/images/macbook _tech_card_1.svg';
 import TechCard2 from '../assets/images/macbook _tech_card_2.svg';
 import TechCard3 from '../assets/images/macbook _tech_card_3.svg';
 import TechCard4 from '../assets/images/macbook _tech_card_4.svg';
-
+//test
 const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
   const items = [0, 1, 2, 3];
   const [activeSlide, setActiveSlide] = useState(0);
@@ -14,7 +14,7 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
         activeSlide === 0 ? <span className='tech_card_title'>Технологічні карти</span> :
           activeSlide === 1 ? <span className='tech_card_title'>Моніторинг</span> :
             activeSlide === 2 ? <span className='tech_card_title'>Сівообіг та поля</span> :
-              <span className='tech_card_title'>Погода</span>
+              <span className='tech_card_title'>Погода</span> 
       }
 
       <div className='tech_card_text_container'>
