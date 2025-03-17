@@ -10,10 +10,9 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
 
   return <div ref={ref} className="tech_card_page">
     <div className='tech_card_content_container'>
+      <span className='tech_card_title'>Технологічні карти</span>
+
       <div className='tech_card_text_container'>
-        <span className='tech_card_title'>Технологічні</span>
-        <br />
-        <span className='tech_card_title'>карти</span>
         <div className='tech_card_sub_text_container'>
           <div className='tech_card_text_item'>
             <span className='tech_card_text'>Автоматичне створення</span>
@@ -34,13 +33,13 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
             <span className='tech_card_text'>в реальному часі</span>
           </div>
         </div>
-      </div>
-      <div className='tech_card_img_container'>
-        <img className="logo_card_img" src={TechCard1} alt="Tech Card" />
-        <div className='menu_slides_container'>
-          {items.map((item, index) => (
-            <div key={item} className={`menu-item item-${item}`}></div>
-          ))}
+        <div className='tech_card_img_container'>
+          <img className="logo_card_img" src={TechCard1} alt="Tech Card" />
+          <div className='menu_slides_container'>
+            {items.map((item, index) => (
+              <div key={item} className={`menu-item item-${item}`}></div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
