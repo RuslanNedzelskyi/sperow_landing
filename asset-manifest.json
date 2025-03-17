@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sperow_landing/static/css/main.ba7b2409.css",
-    "main.js": "/sperow_landing/static/js/main.948c8d97.js",
+    "main.js": "/sperow_landing/static/js/main.0d808b4a.js",
     "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/macbook _tech_card_2.svg": "/sperow_landing/static/media/macbook _tech_card_2.b41533cd57980a4e3d6a9e8eeae2e950.svg",
     "static/media/macbook _tech_card_3.svg": "/sperow_landing/static/media/macbook _tech_card_3.262a711e12c10eb2d4aa3132c73eecf1.svg",
@@ -14,10 +14,10 @@
     "static/media/logo_light.svg": "/sperow_landing/static/media/logo_light.402c6c147cb1aac7e4584dc9308730c7.svg",
     "index.html": "/sperow_landing/index.html",
     "main.ba7b2409.css.map": "/sperow_landing/static/css/main.ba7b2409.css.map",
-    "main.948c8d97.js.map": "/sperow_landing/static/js/main.948c8d97.js.map"
+    "main.0d808b4a.js.map": "/sperow_landing/static/js/main.0d808b4a.js.map"
   },
   "entrypoints": [
     "static/css/main.ba7b2409.css",
-    "static/js/main.948c8d97.js"
+    "static/js/main.0d808b4a.js"
   ]
 }
