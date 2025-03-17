@@ -214,7 +214,7 @@ body {
     min-height: 100vh;
   }
 
-  .tech_card_page {
+  /* .tech_card_page {
     height: 100%;
     min-height: 100vh;
     background-color: #043129 !important;
@@ -293,7 +293,137 @@ body {
         }
       }
     }
+  } */
+
+/* ai */
+
+  .tech_card_page {
+    min-height: 100vh;
+    background-color: #043129;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .tech_card_content_container {
+    width: 100%;
+    /* max-width: 1400px; */
+    /* padding: 50px 20px; */
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .tech_card_title {
+    color: #ffbc35;
+    font-family: 'Raleway Medium';
+    font-style: italic;
+    font-size: clamp(60px, 10vw, 130px);
+    /* Адаптивний розмір шрифту */
+    line-height: 1.1;
+    white-space: nowrap;
+    letter-spacing: clamp(5px, 1vw, 10px);
+    /* Адаптивна відстань між символами */
+    display: block;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+
+  .tech_card_text_container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Дозволяє переносити елементи на малих екранах */
+    gap: 40px;
+    /* Відстань між текстом і картинкою */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tech_card_sub_text_container {
+    color: #fef5e2;
+    font-family: 'Raleway Regular';
+    font-size: clamp(18px, 2vw, 28px);
+    /* Адаптивний розмір шрифту */
+    flex: 1 1 400px;
+    /* Гнучка ширина тексту */
+    max-width: 530px;
+  }
+
+  .tech_card_text_item {
+    padding-bottom: 30px;
+    letter-spacing: clamp(2px, 0.5vw, 6px);
+    /* Адаптивна відстань між символами */
+  }
+
+  .tech_card_img_container {
+    flex: 1 1 50%;
+    /* Гнучка ширина картинки */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo_card_img {
+    width: 100%;
+    max-width: 800px;
+    /* Максимальна ширина картинки */
+    height: auto;
+    /* Зберігає пропорції */
+    padding-top: 20px;
+  }
+
+  .menu_slides_container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .menu-item {
+    background-color: #fef5e2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .item-1 {
+    width: 85px;
+    height: 10px;
+  }
+
+  .item-2,
+  .item-3,
+  .item-4 {
+    width: 20px;
+    height: 10px;
+  }
+
+  .menu-item.active {
+    background-color: #ffbc35;
+    /* Колір активного слайду */
+  }
+
+  /* Медіазапити для малих екранів */
+  @media (max-width: 768px) {
+    .tech_card_content_container {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    .tech_card_text_container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .tech_card_sub_text_container {
+      max-width: 100%;
+    }
+
+    .tech_card_img_container {
+      max-width: 100%;
+    }
+  }
+
+  /* ai */
 
   .ecosystem_page {
     background-color: #FEF5E2;
