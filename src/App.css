@@ -223,6 +223,13 @@ body {
     min-height: 90vh;
   }
 
+  @media (max-width: 1680px) {
+    .about_us_page {
+      height: 80%;
+      min-height: 80vh;
+    }
+  }
+
   .agro_ai_page {
     background-color: #043129;
     height: 100%;
@@ -429,7 +436,8 @@ body {
   }
 
   .ecosystem_page {
-    background-color: #FEF5E2;
+    /* background-color: #FEF5E2; */
+    background-color: burlywood;
     height: 100%;
     min-height: 100vh;
   }
@@ -437,7 +445,79 @@ body {
   .mission_page {
     background-color: #FEF5E2;
     height: 100%;
-    min-height: 100vh;
+    display: flex;
+    padding: 90px 100px 90px 100px;
+
+    .mission_content_container {
+      font-family: 'Raleway SemiBold';
+      font-size: 40px;
+      color: #FFBC35;
+      width: 50%;
+
+      .our_mission_text_container {
+        padding-left: 24px;
+        border-left: 3px solid #FFBC35;
+        line-height: 50px;
+
+        .our_mission_text {
+          padding-bottom: 70px;
+
+          .our_mission {
+            font-family: 'Raleway Bold';
+            font-size: 64px;
+          }
+        }
+
+        .our_mission_text_continue {}
+      }
+
+      .mission_button_container {
+        padding-top: 70px;
+
+        .mission_button {
+          display: flex;
+          border-radius: 20px;
+          height: 65px;
+          width: 290px;
+          background-color: #FFBC35;
+          font-size: 26px;
+          color: #FEF5E2;
+          font-family: 'Raleway Bold';
+          cursor: pointer;
+          text-align: center;
+          justify-content: space-around;
+
+          .mission_button_text {
+            align-content: center;
+          }
+
+          .mvp_button {
+            width: 65px;
+          }
+        }
+
+        .mission_button:hover {
+          box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+        }
+      }
+    }
+
+    .mission_text_container {
+      font-family: 'Raleway Medium';
+      font-size: 26px;
+      color: #043129;
+      width: 50%;
+
+      .mission_text_item {
+        margin-bottom: 15px;
+        border: 1px solid #043129;
+        border-radius: 10px;
+        height: 150px;
+        align-content: center;
+        text-align: justify;
+        padding: 0 20px 0 20px;
+      }
+    }
   }
 
   .advantages_page {
@@ -518,6 +598,16 @@ body {
             font-size: 38px;
             font-family: 'Rajdhani Regular' !important;
           }
+
+          @media (max-width: 1680px) {
+            .email_information {
+              font-size: 30px;
+            }
+
+            .phone_number_information {
+              font-size: 34px;
+            }
+          }
         }
       }
 
@@ -553,6 +643,16 @@ body {
 
           .container_menu_item:hover {
             color: #FFBC35;
+          }
+        }
+
+        @media (max-width: 1680px) {
+          .first_menu_container {
+            font-size: 24px;
+          }
+
+          .second_menu_container {
+            font-size: 24px;
           }
         }
       }
@@ -591,7 +691,9 @@ body {
         .social_media_icon_container {
           padding-right: 30px;
 
-          .social_media_icon {}
+          .social_media_icon {
+            padding-bottom: 15px;
+          }
         }
       }
 
@@ -599,6 +701,12 @@ body {
         color: #FEF5E2;
         font-size: 28px;
         font-family: 'Raleway Regular';
+      }
+
+      @media (max-width: 1680px) {
+        .social_media_text {
+          font-size: 24px;
+        }
       }
     }
   }
