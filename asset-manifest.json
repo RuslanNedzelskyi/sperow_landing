@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sperow_landing/static/css/main.56a95397.css",
+    "main.css": "/sperow_landing/static/css/main.7ddc66ef.css",
     "main.js": "/sperow_landing/static/js/main.014f36c6.js",
     "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/agro_ai.jpg": "/sperow_landing/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
@@ -22,11 +22,11 @@
     "static/media/facebook.svg": "/sperow_landing/static/media/facebook.822bedf63b8c8d6d79600f748082e247.svg",
     "index.html": "/sperow_landing/index.html",
     "static/media/arrow.svg": "/sperow_landing/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
-    "main.56a95397.css.map": "/sperow_landing/static/css/main.56a95397.css.map",
+    "main.7ddc66ef.css.map": "/sperow_landing/static/css/main.7ddc66ef.css.map",
     "main.014f36c6.js.map": "/sperow_landing/static/js/main.014f36c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.56a95397.css",
+    "static/css/main.7ddc66ef.css",
     "static/js/main.014f36c6.js"
   ]
 }
