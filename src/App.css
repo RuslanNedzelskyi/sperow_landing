@@ -526,6 +526,16 @@ body {
     background-color: #043129;
     height: 100%;
     min-height: 100vh;
+    padding: 80px 100px 80px 100px;
+    background-size: cover;
+    background-position: center;
+
+    .advantages_title {
+      font-family: 'Raleway Bold';
+      font-size: 48px;
+      text-align: center;
+      color: #FEF5E2;
+    }
   }
 
   .values_page {
