@@ -100,7 +100,7 @@ function App() {
   const scrollToSection = (id: number) => {
     const section = sectionRefs.find((s) => s.id === id);
     if (section?.ref.current) {
-      section.ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      section.ref.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
       setActiveSection(id);
     }
   };
@@ -205,7 +205,7 @@ function App() {
               <Values ref={sectionRefs[7].ref} />
               <Partners ref={sectionRefs[8].ref} />
               <Command ref={sectionRefs[9].ref} />
-              <Footer ref={sectionRefs[10].ref} />
+              <Footer scrollToSection={scrollToSection} ref={sectionRefs[10].ref} />
             </div>
             <Backdrop
               sx={(theme) => ({

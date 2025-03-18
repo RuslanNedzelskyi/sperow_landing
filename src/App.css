@@ -19,6 +19,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Raleway Bold';
+  src: url('./fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rajdhani Regular';
+  src: url('./fonts/Rajdhani-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 /* Загальні стилі */
 body {
   font-family: sans-serif;
@@ -62,7 +78,6 @@ body {
           height: 100%;
           width: 100%;
         }
-
       }
     }
 
@@ -209,9 +224,99 @@ body {
   }
 
   .agro_ai_page {
-    background-color: #FEF5E2;
+    background-color: #043129;
     height: 100%;
     min-height: 100vh;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    .agro_ai_title {
+      color: #FFBC35;
+      font-family: 'Raleway Medium';
+      font-size: 120px;
+      text-align: center;
+      letter-spacing: 6px;
+    }
+
+    .agro_ai_sub_title {
+      color: #FEF5E2;
+      font-family: 'Raleway Medium';
+      font-size: 45px;
+      text-align: center;
+      letter-spacing: 4px;
+      margin-top: -15px;
+    }
+
+    .agro_ai_content_container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 50px;
+
+      .agro_ai_text_container {
+        min-width: 600px;
+        max-width: 600px;
+
+        .agro_ai_text_title {
+          color: #FFBC35;
+          font-family: 'Raleway Medium';
+          font-size: 45px;
+          border-bottom: 1px solid #FFBC35;
+          width: 74%;
+          line-height: 40px;
+          padding-bottom: 20px;
+          letter-spacing: 6px;
+        }
+
+        .agro_ai_text {
+          color: #FEF5E2;
+          font-family: 'Raleway Regular';
+          font-size: 28px;
+          padding-top: 20px;
+
+          .agro_ai_text_item {
+            padding-bottom: 20px;
+          }
+        }
+
+        .agro_ai_button_container {
+          .agro_ai_button {
+            display: flex;
+            border-radius: 20px;
+            height: 65px;
+            width: 290px;
+            background-color: #FFBC35;
+            font-size: 26px;
+            color: #FEF5E2;
+            font-family: 'Raleway Bold';
+            cursor: pointer;
+            align-content: center;
+            text-align: center;
+            justify-content: space-around;
+
+            .agro_ai_button_text {
+              align-content: center;
+            }
+
+            .mvp_button {
+              width: 65px;
+            }
+          }
+
+          .agro_ai_button:hover {
+            box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+          }
+        }
+      }
+
+      .agro_ai_photo_container {
+        .agro_ai_photo {
+          width: 991px;
+          height: 100%;
+        }
+      }
+    }
   }
 
   .tech_card_page {
@@ -228,13 +333,10 @@ body {
       .tech_card_title {
         color: #FFBC35;
         font-family: 'Raleway Medium';
-        font-style: italic;
         font-size: 120px;
-        margin-left: -23px;
         line-height: 120px;
         white-space: nowrap;
         letter-spacing: 10px;
-        padding-bottom: 100px;
       }
 
       .tech_card_text_container {
@@ -285,13 +387,6 @@ body {
             width: 85px;
             height: 10px;
           }
-
-          /* .item-2,
-          .item-3,
-          .item-4 {
-            width: 20px;
-            height: 10px;
-          } */
         }
       }
     }
@@ -335,8 +430,134 @@ body {
 
   .footer_page {
     background-color: #043129;
-    height: 50%;
-    min-height: 50vh;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    .contact_text_container {
+      display: flex;
+      font-family: 'Raleway Regular';
+      padding-top: 40px;
+      justify-content: space-between;
+      padding-bottom: 30px;
+
+      .contact_text_with_icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .logo_contact_container {
+          cursor: pointer;
+          height: 95px;
+          width: 150px;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+          margin-top: -3px;
+
+          .logo {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .contact_information_container {
+          height: 100%;
+          max-height: 260px;
+
+          .email_information {
+            color: #FEF5E2;
+            font-size: 34px;
+            padding-bottom: 25px;
+          }
+
+          .phone_number_information {
+            color: #FEF5E2;
+            font-size: 38px;
+            font-family: 'Rajdhani Regular' !important;
+          }
+        }
+      }
+
+      .contact_menu_container {
+        display: flex;
+        width: 540px;
+        justify-content: space-between;
+
+        .first_menu_container {
+          color: #FEF5E2;
+          font-size: 28px;
+
+          .container_menu_item {
+            padding-bottom: 15px;
+            text-box-trim: trim-start;
+            cursor: pointer;
+          }
+
+          .container_menu_item:hover {
+            color: #FFBC35;
+          }
+        }
+
+        .second_menu_container {
+          color: #FEF5E2;
+          font-size: 28px;
+
+          .container_menu_item {
+            padding-bottom: 15px;
+            text-box-trim: trim-start;
+            cursor: pointer;
+          }
+
+          .container_menu_item:hover {
+            color: #FFBC35;
+          }
+        }
+      }
+
+      .contact_testing_button_container {
+        .contact_testing_button {
+          border-radius: 20px;
+          height: 50px;
+          width: 215px;
+          background-color: #FEF5E2;
+          font-size: 20px;
+          color: #043129;
+          font-family: 'Raleway Regular';
+          cursor: pointer;
+          align-content: center;
+          text-align: center;
+
+          :hover {
+            color: #FFBC35;
+          }
+        }
+
+        .contact_testing_button:hover {
+          color: #FFBC35;
+        }
+      }
+    }
+
+    .social_media_container {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #FEF5E2;
+      padding-top: 30px;
+
+      .social_media_icons {
+        .social_media_icon_container {
+          padding-right: 30px;
+
+          .social_media_icon {}
+        }
+      }
+
+      .social_media_text {
+        color: #FEF5E2;
+        font-size: 28px;
+        font-family: 'Raleway Regular';
+      }
+    }
   }
 }
 

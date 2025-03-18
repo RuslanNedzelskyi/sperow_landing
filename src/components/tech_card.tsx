@@ -3,7 +3,7 @@ import TechCard1 from '../assets/images/macbook _tech_card_1.svg';
 import TechCard2 from '../assets/images/macbook _tech_card_2.svg';
 import TechCard3 from '../assets/images/macbook _tech_card_3.svg';
 import TechCard4 from '../assets/images/macbook _tech_card_4.svg';
-//test
+
 const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
   const items = [0, 1, 2, 3];
   const [activeSlide, setActiveSlide] = useState(0);
