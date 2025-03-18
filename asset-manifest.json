@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sperow_landing/static/css/main.c5167dc1.css",
-    "main.js": "/sperow_landing/static/js/main.45f3f8d1.js",
+    "main.css": "/sperow_landing/static/css/main.56a95397.css",
+    "main.js": "/sperow_landing/static/js/main.014f36c6.js",
     "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/agro_ai.jpg": "/sperow_landing/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
     "static/media/macbook _tech_card_2.svg": "/sperow_landing/static/media/macbook _tech_card_2.b41533cd57980a4e3d6a9e8eeae2e950.svg",
@@ -22,11 +22,11 @@
     "static/media/facebook.svg": "/sperow_landing/static/media/facebook.822bedf63b8c8d6d79600f748082e247.svg",
     "index.html": "/sperow_landing/index.html",
     "static/media/arrow.svg": "/sperow_landing/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
-    "main.c5167dc1.css.map": "/sperow_landing/static/css/main.c5167dc1.css.map",
-    "main.45f3f8d1.js.map": "/sperow_landing/static/js/main.45f3f8d1.js.map"
+    "main.56a95397.css.map": "/sperow_landing/static/css/main.56a95397.css.map",
+    "main.014f36c6.js.map": "/sperow_landing/static/js/main.014f36c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5167dc1.css",
-    "static/js/main.45f3f8d1.js"
+    "static/css/main.56a95397.css",
+    "static/js/main.014f36c6.js"
   ]
 }
