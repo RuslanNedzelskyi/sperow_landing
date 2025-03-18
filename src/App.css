@@ -221,6 +221,8 @@ body {
     background-color: #FEF5E2;
     height: 90%;
     min-height: 90vh;
+    display: flex;
+    align-items: center;
   }
 
   @media (max-width: 1680px) {
@@ -548,7 +550,18 @@ body {
   .command_page {
     background-color: #FEF5E2;
     height: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
+    padding: 80px 100px 70px 100px;
+
+    .three_images_container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .two_images_container {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 
   .footer_page {
@@ -952,5 +965,5 @@ body {
 
 .about_us_page div {
   text-align-last: center;
-  padding-top: 55px;
+  width: 100%;
 }
