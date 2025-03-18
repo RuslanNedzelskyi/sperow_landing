@@ -249,6 +249,16 @@ body {
       margin-top: -15px;
     }
 
+    @media (max-width: 1600px) {
+      .agro_ai_title {
+        font-size: 90px !important;
+      }
+
+      .agro_ai_sub_title {
+        font-size: 40px !important;
+      }
+    }
+
     .agro_ai_content_container {
       display: flex;
       justify-content: space-between;
@@ -280,6 +290,25 @@ body {
           }
         }
 
+        @media (max-width: 1600px) {
+          .agro_ai_text_title {
+            font-size: 40px !important;
+            border-bottom: 1px solid #FFBC35;
+            width: 67%;
+            line-height: 40px;
+            padding-bottom: 20px;
+            letter-spacing: 6px;
+          }
+
+          .agro_ai_text {
+            font-size: 24px;
+
+            .agro_ai_text_item {
+              padding-bottom: 15px;
+            }
+          }
+        }
+
         .agro_ai_button_container {
           .agro_ai_button {
             display: flex;
@@ -291,7 +320,6 @@ body {
             color: #FEF5E2;
             font-family: 'Raleway Bold';
             cursor: pointer;
-            align-content: center;
             text-align: center;
             justify-content: space-around;
 
@@ -314,6 +342,14 @@ body {
         .agro_ai_photo {
           width: 991px;
           height: 100%;
+        }
+
+        @media (max-width: 1600px) {
+          .agro_ai_photo {
+            height: 596px;
+            vertical-align: text-top;
+            width: 800px;
+          }
         }
       }
     }
@@ -405,19 +441,26 @@ body {
   }
 
   .advantages_page {
-    background-color: #FEF5E2;
+    background-color: #043129;
     height: 100%;
     min-height: 100vh;
   }
 
   .values_page {
     background-color: #FEF5E2;
-    height: 100%;
-    min-height: 100vh;
+    height: 90%;
+    min-height: 90vh;
+    align-content: center;
+
+    .values_image_container {
+      justify-self: center;
+
+      .values_image {}
+    }
   }
 
   .partners_page {
-    background-color: #FEF5E2;
+    background-color: #043129;
     height: 100%;
     min-height: 100vh;
   }
