@@ -439,7 +439,7 @@ body {
 
   .ecosystem_page {
     background-color: #FEF5E2;
-    padding: 100px 100px 100px 100px;
+    padding: 0 100px 100px 100px;
 
     .ecosystem_img_container {
       display: flex;
