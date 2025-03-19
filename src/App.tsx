@@ -28,6 +28,30 @@ const theme = createTheme({
   },
 });
 
+const useIsAtBottom = (threshold: number = 0) => {
+  const [isAtBottom, setIsAtBottom] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      const isBottom = scrollTop + windowHeight >= documentHeight - threshold;
+      setIsAtBottom(isBottom);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [threshold]);
+
+  return isAtBottom;
+};
+
 interface ISectionRefs {
   id: number;
   ref: React.RefObject<HTMLDivElement | null>;
@@ -59,6 +83,8 @@ function App() {
   const [menuLangOpen, setMenuLangOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [activeSection, setActiveSection] = useState<number | null>(null);
+  const isAtBottom = useIsAtBottom(50); // Поріг 50 пікселів до кінця
+  const [hasReachedBottom, setHasReachedBottom] = useState(false); // Чи користувач досягав низу
 
   const handleCloseMenuOverlay = () => {
     setOpenMenu(!openMenu);
@@ -132,6 +158,26 @@ function App() {
     };
   }, [menuLangOpen, selectedLanguage]);
 
+  // Логіка, коли користувач доскролив до кінця або піднявся вище
+  useEffect(() => {
+    if (isAtBottom) {
+      // Користувач доскролив до кінця (або до 50 пікселів від кінця)
+      setHasReachedBottom(true);
+      console.log("Користувач доскролив до кінця сторінки!");
+    } else if (hasReachedBottom) {
+      // Перевіряємо, чи користувач піднявся вище 50 пікселів від низу
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const distanceFromBottom = documentHeight - (scrollTop + windowHeight);
+
+      if (distanceFromBottom > 50) {
+        console.log("Користувач піднявся вище 50 пікселів від низу!");
+        setHasReachedBottom(false); // Скидаємо стан, щоб повторно виявляти досягнення низу
+      }
+    }
+  }, [isAtBottom, hasReachedBottom]);
+
   return (
     <Router>
       <ThemeProvider theme={theme}>
@@ -182,15 +228,16 @@ function App() {
             </div>
           </header>
           <main>
-            <div className={sectionRefs && sectionRefs.length && activeSection && activeSection == sectionRefs[sectionRefs.length - 1].id ? "side-navigation side-navigation_hide" : "side-navigation"}>
+            <div className={hasReachedBottom ? "side-navigation side-navigation_hide" : "side-navigation"}>
               <ul className="side-navigation__content">
                 {sectionRefs.map((section) => (
-                  <li onClick={() => scrollToSection(section.id)} key={section.id} className={activeSection && activeSection === section.id ? "side-navigation__item side-navigation__item_active" : "side-navigation__item"}>
-                    <a className={activeSection && activeSection == section.id ? "side-navigation__link side-navigation__link_active" : "side-navigation__link"}>
-                      <span className="test">{section.id}</span>
-                      <div className="side-navigation__title">{section.tip}</div>
-                    </a>
-                  </li>
+                  section.id === sectionRefs[sectionRefs.length - 1].id ? undefined :
+                    <li onClick={() => scrollToSection(section.id)} key={section.id} className={activeSection && activeSection === section.id ? "side-navigation__item side-navigation__item_active" : "side-navigation__item"}>
+                      <a className={activeSection && activeSection == section.id ? "side-navigation__link side-navigation__link_active" : "side-navigation__link"}>
+                        <span className="test">{section.id}</span>
+                        <div className="side-navigation__title">{section.tip}</div>
+                      </a>
+                    </li>
                 ))}
               </ul>
             </div>
@@ -238,7 +285,8 @@ function App() {
             >
               <div className='menu_container'>
                 {sectionRefs.map((section) =>
-                  (<div onClick={() => scrollToSection(section.id)} className='menu_item'>{section.nameUa}</div>)
+                  section.id === sectionRefs[sectionRefs.length - 1].id ? undefined :
+                    (<div onClick={() => scrollToSection(section.id)} className='menu_item'>{section.nameUa}</div>)
                 )}
               </div>
             </Backdrop>

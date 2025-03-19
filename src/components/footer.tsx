@@ -36,12 +36,14 @@ const secondMenu: IMenuItem[] = [
   { id: 10, nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда' },
 ];
 
-const Footer = forwardRef<HTMLDivElement, IFooterProps>((props, ref) => {
+// const Footer = forwardRef<HTMLDivElement, IFooterProps>((props, ref) => {
+const Footer = forwardRef<HTMLDivElement, IFooterProps>((props) => {
   const handleScrollToSerction = (idSection: number) => {
     props.scrollToSection(idSection);
   }
 
-  return <div ref={ref} className="footer_page">
+  // return <div ref={ref} className="footer_page">
+  return <div className="footer_page">
     <div className='contact_text_container'>
       <div className='contact_text_with_icon'>
         <div className='logo_contact_container'>
