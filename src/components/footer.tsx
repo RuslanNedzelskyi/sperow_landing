@@ -7,6 +7,7 @@ import youtube from '../assets/images/youtube.svg';
 
 interface IFooterProps {
   scrollToSection: (id: number) => void;
+  handleOpenModal: () => void;
 }
 
 const telegramUrl: string = 'https://t.me/K_Horobets';
@@ -67,7 +68,7 @@ const Footer = forwardRef<HTMLDivElement, IFooterProps>((props) => {
         </div>
       </div>
       <div className='contact_testing_button_container'>
-        <div className='contact_testing_button'>Тестувати MVP</div>
+        <div className='contact_testing_button' onClick={props.handleOpenModal}>Тестувати MVP</div>
       </div>
     </div>
     <div className='social_media_container'>

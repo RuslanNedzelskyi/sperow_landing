@@ -18,6 +18,7 @@ import Advantages from './components/advantages';
 import Values from './components/values';
 import Partners from './components/partners';
 import Command from './components/command';
+import ModalMvp from './components/modal_mvp';
 
 const theme = createTheme({
   palette: {
@@ -85,6 +86,7 @@ function App() {
   const [activeSection, setActiveSection] = useState<number | null>(null);
   const isAtBottom = useIsAtBottom(50); // Поріг 50 пікселів до кінця
   const [hasReachedBottom, setHasReachedBottom] = useState(false); // Чи користувач досягав низу
+  const [open, setOpen] = useState(false);
 
   const handleCloseMenuOverlay = () => {
     setOpenMenu(!openMenu);
@@ -122,6 +124,14 @@ function App() {
       }
     });
   };
+
+  const handleOpenModal = () => {
+    setOpen(true);
+  }
+
+  const handleCloseModal = () => {
+    setOpen(false);
+  }
 
   const scrollToSection = (id: number) => {
     const section = sectionRefs.find((s) => s.id === id);
@@ -208,7 +218,7 @@ function App() {
                   </div>
                 </div>
                 <div className='top_button_testing_container'>
-                  <div className='top_button_testing'>
+                  <div className='top_button_testing' onClick={handleOpenModal}>
                     Тестувати MVP
                   </div>
                 </div>
@@ -244,15 +254,15 @@ function App() {
             <div className="content">
               <General ref={sectionRefs[0].ref} />
               <AboutUs ref={sectionRefs[1].ref} />
-              <AgroAi ref={sectionRefs[2].ref} />
+              <AgroAi ref={sectionRefs[2].ref} handleOpenModal={handleOpenModal} />
               <TechCard ref={sectionRefs[3].ref} />
               <Ecosystem ref={sectionRefs[4].ref} />
-              <Mission ref={sectionRefs[5].ref} />
+              <Mission ref={sectionRefs[5].ref} handleOpenModal={handleOpenModal} />
               <Advantages ref={sectionRefs[6].ref} />
               <Values ref={sectionRefs[7].ref} />
               <Partners ref={sectionRefs[8].ref} />
               <Command ref={sectionRefs[9].ref} />
-              <Footer scrollToSection={scrollToSection} ref={sectionRefs[10].ref} />
+              <Footer scrollToSection={scrollToSection} handleOpenModal={handleOpenModal} ref={sectionRefs[10].ref} />
             </div>
             <Backdrop
               sx={(theme) => ({
@@ -285,11 +295,13 @@ function App() {
             >
               <div className='menu_container'>
                 {sectionRefs.map((section) =>
-                  section.id === sectionRefs[sectionRefs.length - 1].id ? undefined :
-                    (<div onClick={() => scrollToSection(section.id)} className='menu_item'>{section.nameUa}</div>)
+                section.id === sectionRefs[sectionRefs.length - 1].id ? undefined :
+                  (<div onClick={() => scrollToSection(section.id)} className='menu_item'>{section.nameUa}</div>)
                 )}
               </div>
             </Backdrop>
+
+            <ModalMvp open={open} handleClose={handleCloseModal} />
           </main>
         </div>
       </ThemeProvider>

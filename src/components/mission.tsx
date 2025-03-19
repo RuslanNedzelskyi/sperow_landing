@@ -1,11 +1,11 @@
 import { forwardRef } from 'react';
 import arrow from '../assets/images/arrow.svg';
 
-const Mission = forwardRef<HTMLDivElement>((props, ref) => {
-  const handleClickMvp = () => {
+interface IMissionProps {
+  handleOpenModal: () => void;
+}
 
-  }
-
+const Mission = forwardRef<HTMLDivElement, IMissionProps>((props, ref) => {
   return <div ref={ref} className="mission_page">
     <div className='mission_content_container'>
       <div className='our_mission_text_container'>
@@ -13,9 +13,9 @@ const Mission = forwardRef<HTMLDivElement>((props, ref) => {
         <div className='our_mission_text_continue'>Ми прагнемо цифровізувати аграрний сектор, роблячи його більш передбачуваним і контрольованим.</div>
       </div>
       <div className='mission_button_container'>
-        <div className='mission_button'>
+        <div className='mission_button' onClick={props.handleOpenModal}>
           <div className='mission_button_text'>Доєднатися</div>
-          <img onClick={handleClickMvp} className="mvp_button" src={arrow} alt="MVP" /></div>
+          <img className="mvp_button" src={arrow} alt="MVP" /></div>
       </div>
     </div>
     <div className='mission_text_container'>
