@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sperow_landing/static/css/main.3f81c72b.css",
-    "main.js": "/sperow_landing/static/js/main.b4f08b34.js",
+    "main.css": "/sperow_landing/static/css/main.0be326fc.css",
+    "main.js": "/sperow_landing/static/js/main.a6bc8f9b.js",
     "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/advantages.jpg": "/sperow_landing/static/media/advantages.2a93137af7201bac0641.jpg",
     "static/media/agro_ai.jpg": "/sperow_landing/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
@@ -10,9 +10,10 @@
     "static/media/Kyril.svg": "/sperow_landing/static/media/Kyril.67716fd6ecd8be71411880a187ac0a14.svg",
     "static/media/Evgen.svg": "/sperow_landing/static/media/Evgen.ff8f41568f37d5d28ceb22c1bdb9c86b.svg",
     "static/media/macbook _tech_card_3.svg": "/sperow_landing/static/media/macbook _tech_card_3.262a711e12c10eb2d4aa3132c73eecf1.svg",
-    "static/media/macbook _tech_card_4.svg": "/sperow_landing/static/media/macbook _tech_card_4.dac324daca4cd910d3b082f2a080b2a9.svg",
     "static/media/Victoria.svg": "/sperow_landing/static/media/Victoria.1c2604228d16af973783e324f9d6c4f2.svg",
     "static/media/macbook _tech_card_1.svg": "/sperow_landing/static/media/macbook _tech_card_1.5180ca51eea60f614410707df8e1b8fc.svg",
+    "static/media/macbook _tech_card_4.svg": "/sperow_landing/static/media/macbook _tech_card_4.5339814636f3d6ddae0cda5551601d23.svg",
+    "static/media/agrarka.svg": "/sperow_landing/static/media/agrarka.f18cdf91b248b57462eb6df12c62886a.svg",
     "static/media/Rajdhani-Regular.ttf": "/sperow_landing/static/media/Rajdhani-Regular.148606c1eb703f6e597a.ttf",
     "static/media/Olya.svg": "/sperow_landing/static/media/Olya.b1be57ea9b2a91f6bfabaacbc0b92a29.svg",
     "static/media/advantages_right.svg": "/sperow_landing/static/media/advantages_right.83f2b6d004d2c0bba8318ef3a8a47a20.svg",
@@ -22,19 +23,26 @@
     "static/media/Raleway-Bold.ttf": "/sperow_landing/static/media/Raleway-Bold.8e546283422c830c02dc.ttf",
     "static/media/advantages_left.svg": "/sperow_landing/static/media/advantages_left.932d43620f913f7d539adbe9426e8057.svg",
     "static/media/values.svg": "/sperow_landing/static/media/values.fb29c108bb8ebfb492044b04022f9f19.svg",
+    "static/media/profspilka.svg": "/sperow_landing/static/media/profspilka.7fcd9d0e084614d6ee1285e8f1b19b94.svg",
     "static/media/logo_name.svg": "/sperow_landing/static/media/logo_name.0b19040ac852303608b17284c5af10b2.svg",
+    "static/media/agroednist.svg": "/sperow_landing/static/media/agroednist.8d3af44a7c06f40c088a5ea3baa7c884.svg",
+    "static/media/servig.svg": "/sperow_landing/static/media/servig.7ffc940726c3100de81ebe0e9bfa54d0.svg",
+    "static/media/kivi.svg": "/sperow_landing/static/media/kivi.168eab60bdc35b7eede2b01a52db4925.svg",
     "static/media/logo_light.svg": "/sperow_landing/static/media/logo_light.402c6c147cb1aac7e4584dc9308730c7.svg",
+    "static/media/armar.svg": "/sperow_landing/static/media/armar.c353d708bd1ea85fa473bd3f0a975d17.svg",
     "static/media/telegram.svg": "/sperow_landing/static/media/telegram.6e59a52f6940e894ba4a86c97848f3c2.svg",
     "static/media/youtube.svg": "/sperow_landing/static/media/youtube.2442fcebbb8a94b91599812ca12e4dbf.svg",
     "static/media/instagram.svg": "/sperow_landing/static/media/instagram.0a0ba7dbfac5af9f621b871dd49d9cb1.svg",
     "static/media/facebook.svg": "/sperow_landing/static/media/facebook.822bedf63b8c8d6d79600f748082e247.svg",
     "index.html": "/sperow_landing/index.html",
+    "static/media/arrow_left.svg": "/sperow_landing/static/media/arrow_left.bfa76196317e546d48cc1a938fcb0d3d.svg",
+    "static/media/arrow_right.svg": "/sperow_landing/static/media/arrow_right.44e6d4713f93ea18113c4a33b7be788d.svg",
     "static/media/arrow.svg": "/sperow_landing/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
-    "main.3f81c72b.css.map": "/sperow_landing/static/css/main.3f81c72b.css.map",
-    "main.b4f08b34.js.map": "/sperow_landing/static/js/main.b4f08b34.js.map"
+    "main.0be326fc.css.map": "/sperow_landing/static/css/main.0be326fc.css.map",
+    "main.a6bc8f9b.js.map": "/sperow_landing/static/js/main.a6bc8f9b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f81c72b.css",
-    "static/js/main.b4f08b34.js"
+    "static/css/main.0be326fc.css",
+    "static/js/main.a6bc8f9b.js"
   ]
 }
