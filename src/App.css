@@ -524,17 +524,59 @@ body {
 
   .advantages_page {
     background-color: #043129;
-    height: 100%;
-    min-height: 100vh;
-    padding: 80px 100px 80px 100px;
+    height: 80%;
+    min-height: 80vh;
+    padding: 100px 100px 80px 100px;
     background-size: cover;
     background-position: center;
+    max-width: 100%;
+    min-width: 100%;
 
     .advantages_title {
       font-family: 'Raleway Bold';
       font-size: 48px;
       text-align: center;
       color: #FEF5E2;
+      margin-top: -50px;
+      width: 220px;
+    }
+
+    .advantages_images_container {
+      display: flex;
+
+      .advantages_left_image_container {
+        .advantages_left_image {
+          height: 596px;
+          vertical-align: text-top;
+          width: 800px;
+        }
+
+        @media (max-width: 1680px) {
+          .advantages_left_image {
+            height: 596px;
+            vertical-align: text-top;
+            width: 650px;
+          }
+        }
+      }
+
+      .advantages_right_image_container {
+        .advantages_right_image {
+          height: 596px;
+          vertical-align: text-top;
+          width: 760px;
+          margin-left: -38px;
+        }
+
+        @media (max-width: 1680px) {
+          .advantages_right_image {
+            height: 596px;
+            vertical-align: text-top;
+            width: 634px;
+            margin-left: -38px;
+          }
+        }
+      }
     }
   }
 
