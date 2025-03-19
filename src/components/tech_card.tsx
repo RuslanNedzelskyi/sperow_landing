@@ -13,7 +13,7 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
       {
         activeSlide === 0 ? <span className='tech_card_title'>Технологічні карти</span> :
           activeSlide === 1 ? <span className='tech_card_title'>Моніторинг</span> :
-            activeSlide === 2 ? <span className='tech_card_title'>Сівообіг та поля</span> :
+            activeSlide === 2 ? <span className='tech_card_title'>Сівозміна та поля</span> :
               <span className='tech_card_title'>Погода</span> 
       }
 
@@ -68,39 +68,30 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
               activeSlide === 2 ?
                 <div className='tech_card_sub_text_container'>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Підвищення ефективності </span>
-                    <br />
-                    <span className='tech_card_text'>кожного ГА</span>
+                    <span className='tech_card_text'>Підбір найприбутковішої сівозміни</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Рекомендації стосовно </span>
-                    <br />
-                    <span className='tech_card_text'>наступних дій</span>
+                    <span className='tech_card_text'>Рекомендації стосовно наступних дій</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Точне землеробство</span>
+                    <span className='tech_card_text'>Точне землеробство та карта поля</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Автоматичний підрахунок</span>
-                    <br />
-                    <span className='tech_card_text'>рентабельності кожної</span>
-                    <br />
-                    <span className='tech_card_text'>ділянки</span>
+                    <span className='tech_card_text'>Історія полів та ділянок</span>
                   </div>
                 </div> :
                 <div className='tech_card_sub_text_container'>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Аналіз та прогнозування </span>
-                    <br />
-                    <span className='tech_card_text'>погоди</span>
+                    <span className='tech_card_text'>Аналіз та прогнозування погоди</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Вплив погоди на кожній </span>
-                    <br />
-                    <span className='tech_card_text'>ділянці</span>
+                    <span className='tech_card_text'>Вплив погоди на кожну культуру </span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Статистика</span>
+                    <span className='tech_card_text'>Різноманітна статистика</span>
+                  </div>
+                  <div className='tech_card_text_item'>
+                    <span className='tech_card_text'>Фази луни та прикмети</span>
                   </div>
                 </div>
         }

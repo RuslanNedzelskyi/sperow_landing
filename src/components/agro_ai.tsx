@@ -14,12 +14,12 @@ const AgroAi = forwardRef<HTMLDivElement>((props, ref) => {
       <div className='agro_ai_text_container'>
         <div className='agro_ai_text_title'>Все необхідне в одному місці</div>
         <div className='agro_ai_text'>
-          <div className='agro_ai_text_item'>Створює технологічні карти та розраховує рентабельність</div>
-          <div className='agro_ai_text_item'>Моніторить ріст кожної рослини </div>
-          <div className='agro_ai_text_item'>Попереджує про шкідників та хвороби</div>
+          <div className='agro_ai_text_item'>Створення технологічної карти та розрахунок рентабельності</div>
+          <div className='agro_ai_text_item'>Моніторинг росту кожної рослини</div>
+          <div className='agro_ai_text_item'>Попередження шкідників та хвороб</div>
           <div className='agro_ai_text_item'>Аналізує вплив погоди та дає рекомендації</div>
-          <div className='agro_ai_text_item'>Робить хронометраж операцій та підвищує їх ефективність</div>
-          <div className='agro_ai_text_item'>Рекомендує найпідходяще насіння, хімію та добрива</div>
+          <div className='agro_ai_text_item'>Хронометраж операцій та підвищення ефективності за Кайдзен методологією</div>
+          <div className='agro_ai_text_item'>Рекомендує найбільш підходяще насіння, хімію та добрива</div>
         </div>
         <div className='agro_ai_button_container'>
           <div className='agro_ai_button'>
