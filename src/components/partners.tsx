@@ -17,62 +17,39 @@ const images = [
   servig,
 ];
 
-// Дублюємо елементи для створення ілюзії безкінечного скролу
-const extendedImages = [...images, ...images, ...images];
-
 const Partners = forwardRef<HTMLDivElement>((props, ref) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(images.length); // Починаємо з середини extendedImages
-  const [isUserInteracting, setIsUserInteracting] = useState(false); // Відстежуємо взаємодію користувача
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
 
   const totalImages = images.length;
   const imagesPerView = 2; // Скільки картинок видно одночасно
 
   const scrollLeft = () => {
-    setCurrentIndex(currentIndex - 1);
-    setIsUserInteracting(true); // Користувач взаємодіє
+    // Якщо досягли початку, переходимо до кінця
+    const newIndex = currentIndex === 0 ? totalImages - imagesPerView : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    setIsUserInteracting(true);
   };
 
   const scrollRight = () => {
-    setCurrentIndex(currentIndex + 1);
-    setIsUserInteracting(true); // Користувач взаємодіє
+    // Якщо досягли кінця, переходимо до початку
+    const newIndex = currentIndex === totalImages - imagesPerView ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    setIsUserInteracting(true);
   };
 
   // Оновлюємо позицію скролу при зміні currentIndex
   useEffect(() => {
     if (scrollRef.current) {
       const imageWidth = scrollRef.current.querySelector(".first_partner_container")?.clientWidth || 650;
-      const totalItems = extendedImages.length;
-      const maxScrollIndex = totalItems - imagesPerView;
-
-      // Плавно скролимо до поточної позиції
       scrollRef.current.scrollTo({
         left: currentIndex * imageWidth,
         behavior: "smooth",
       });
-
-      // Якщо доходимо до дубльованих елементів, переміщуємо скрол назад
-      if (currentIndex <= 0) {
-        setTimeout(() => {
-          setCurrentIndex(totalImages);
-          scrollRef.current?.scrollTo({
-            left: totalImages * imageWidth,
-            behavior: "auto",
-          });
-        }, 300);
-      } else if (currentIndex >= maxScrollIndex) {
-        setTimeout(() => {
-          setCurrentIndex(totalImages);
-          scrollRef.current?.scrollTo({
-            left: totalImages * imageWidth,
-            behavior: "auto",
-          });
-        }, 300);
-      }
     }
   }, [currentIndex]);
 
-  // Автоматичний скрол вправо кожні 3 секунди
   useEffect(() => {
     let autoScrollInterval: NodeJS.Timeout;
 
@@ -106,9 +83,9 @@ const Partners = forwardRef<HTMLDivElement>((props, ref) => {
           <img src={arrowLeft} alt="Arrow Left" className="arrow_left_img" />
         </button>
         <div className="partners_container" ref={scrollRef}>
-          {extendedImages.map((image, index) => (
+          {images.map((image, index) => (
             <div key={index} className="first_partner_container">
-              <img src={image} alt={`Partner ${index + 1}`} className="scroll_image" />
+              <img src={image} alt={`Partner ${index + 1}`} className={index === 2 ? "scroll_image with_width" : "scroll_image"} />
             </div>
           ))}
         </div>

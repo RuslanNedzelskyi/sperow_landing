@@ -607,94 +607,6 @@ body {
     }
   }
 
-  .partners_page {
-    background-color: #FEF5E2; /* Змінено колір фону */
-    padding: 40px 0;
-    text-align: center;
-  }
-  
-  .partners_title {
-    font-size: 40px;
-    color: #043129;
-    margin-bottom: 20px;
-    font-family: 'Raleway SemiBold';
-  }
-  
-  .partners_section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-    height: 410px;
-  }
-  
-  .partners_container {
-    display: flex;
-    overflow-x: hidden;
-    width: 1200px; /* 2 * 600px для 1920px */
-    height: 100%;
-    scroll-behavior: smooth;
-    align-items: center;
-    gap: 0; /* Прибираємо gap, щоб не було видно частину третьої картинки */
-  }
-  
-  .first_partner_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px; /* Зменшено з 750px */
-    height: 200px;
-    flex-shrink: 0;
-  }
-  
-  .scroll_image {
-    max-width: 80%; /* Зменшуємо розмір самих зображень */
-    max-height: 80%;
-    object-fit: contain;
-  }
-  
-  .arrow_left_img_container,
-  .arrow_right_img_container {
-    position: absolute;
-    background: none;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    z-index: 10; /* Збільшуємо z-index, щоб стрілки точно були поверх усього */
-  }
-  
-  .arrow_left_img,
-  .arrow_right_img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-  }
-  
-  .arrow_left_img_container {
-    left: 100px;
-  }
-  
-  .arrow_right_img_container {
-    right: 100px;
-  }
-  
-  /* Адаптація для екрану 1680px */
-  @media (max-width: 1680px) {
-    .partners_section {
-      max-width: 1680px;
-    }
-  
-    .partners_container {
-      width: 1100px; /* 2 * 550px для 1680px */
-    }
-  
-    .first_partner_container {
-      width: 550px; /* Зменшено з 650px */
-    }
-  }
-
   .command_page {
     background-color: #FEF5E2;
     height: 100%;
@@ -1114,4 +1026,114 @@ body {
 .about_us_page div {
   text-align-last: center;
   width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.partners_page {
+  background-color: #FEF5E2;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.partners_title {
+  font-size: 40px;
+  color: #043129;
+  margin-bottom: 20px;
+  font-family: 'Raleway Regular';
+}
+
+.partners_section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 410px;
+}
+
+.partners_container {
+  display: flex;
+  overflow-x: hidden;
+  width: 1500px;
+  /* Збільшено для 1920px (по 750px на картинку) */
+  height: 100%;
+  scroll-behavior: smooth;
+  align-items: center;
+  gap: 20px;
+}
+
+.first_partner_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 750px;
+  /* Один логотип займає половину від 1500px */
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.scroll_image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+
+  &.with_width {
+    max-width: 86%;
+  }
+}
+
+.arrow_left_img_container,
+.arrow_right_img_container {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrow_left_img,
+.arrow_right_img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.arrow_left_img_container {
+  left: 100px;
+}
+
+.arrow_right_img_container {
+  right: 100px;
+}
+
+/* Адаптація для екрану 1680px */
+@media (max-width: 1680px) {
+  .partners_section {
+    max-width: 1680px;
+  }
+
+  .partners_container {
+    width: 1300px;
+    /* Збільшено до 1300px для 1680px */
+  }
+
+  .first_partner_container {
+    width: 650px;
+    /* Один логотип займає половину від 1300px */
+  }
 }
