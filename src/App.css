@@ -438,10 +438,82 @@ body {
   }
 
   .ecosystem_page {
-    /* background-color: #FEF5E2; */
-    background-color: burlywood;
-    height: 100%;
-    min-height: 100vh;
+    background-color: #FEF5E2;
+    padding: 100px 100px 100px 100px;
+
+    .ecosystem_img_container {
+      display: flex;
+      justify-content: center;
+
+      .ecosystem_img {}
+    }
+
+    .ecosystem_title {
+      color: #043129;
+      font-family: 'Raleway SemiBold';
+      font-size: 40px;
+      text-align: center;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      .ecosystem_sperow {
+        font-family: 'Raleway Medium';
+        font-size: 44px;
+      }
+    }
+
+    .ecosystem_block_container {
+      .ecosystem_first_block {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+
+        .ecosystem_item {
+          text-align: center;
+          padding: 0 20px 0 20px;
+
+          .ecosystem_item_img_container {
+            width: 260px;
+            height: 140px;
+
+            .ecosystem_item_img {}
+          }
+
+          .ecosystem_text {
+            width: 257px;
+            font-family: 'Raleway Regular';
+            font-size: 26px;
+            color: #043129;
+            text-align: center;
+          }
+        }
+      }
+
+      .ecosystem_second_block {
+        display: flex;
+        justify-content: center;
+
+        .ecosystem_item {
+          text-align: center;
+          padding: 0 20px 0 20px;
+
+          .ecosystem_item_img_container {
+            width: 260px;
+            height: 140px;
+
+            .ecosystem_item_img {}
+          }
+
+          .ecosystem_text {
+            width: 257px;
+            font-family: 'Raleway Regular';
+            font-size: 26px;
+            color: #043129;
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 
   .mission_page {
