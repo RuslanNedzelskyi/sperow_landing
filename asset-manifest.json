@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sperow_landing/static/css/main.6c7a870d.css",
-    "main.js": "/sperow_landing/static/js/main.80367d5a.js",
+    "main.css": "/sperow_landing/static/css/main.3f81c72b.css",
+    "main.js": "/sperow_landing/static/js/main.b4f08b34.js",
     "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/advantages.jpg": "/sperow_landing/static/media/advantages.2a93137af7201bac0641.jpg",
     "static/media/agro_ai.jpg": "/sperow_landing/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
@@ -15,6 +15,7 @@
     "static/media/macbook _tech_card_1.svg": "/sperow_landing/static/media/macbook _tech_card_1.5180ca51eea60f614410707df8e1b8fc.svg",
     "static/media/Rajdhani-Regular.ttf": "/sperow_landing/static/media/Rajdhani-Regular.148606c1eb703f6e597a.ttf",
     "static/media/Olya.svg": "/sperow_landing/static/media/Olya.b1be57ea9b2a91f6bfabaacbc0b92a29.svg",
+    "static/media/advantages_right.svg": "/sperow_landing/static/media/advantages_right.83f2b6d004d2c0bba8318ef3a8a47a20.svg",
     "static/media/Raleway-SemiBold.ttf": "/sperow_landing/static/media/Raleway-SemiBold.bd43d9472ee0c9fbe785.ttf",
     "static/media/Raleway-Medium.ttf": "/sperow_landing/static/media/Raleway-Medium.0de5925709848b7e64c5.ttf",
     "static/media/Raleway-Regular.ttf": "/sperow_landing/static/media/Raleway-Regular.d9219d8a361ac3530c7e.ttf",
@@ -29,11 +30,11 @@
     "static/media/facebook.svg": "/sperow_landing/static/media/facebook.822bedf63b8c8d6d79600f748082e247.svg",
     "index.html": "/sperow_landing/index.html",
     "static/media/arrow.svg": "/sperow_landing/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
-    "main.6c7a870d.css.map": "/sperow_landing/static/css/main.6c7a870d.css.map",
-    "main.80367d5a.js.map": "/sperow_landing/static/js/main.80367d5a.js.map"
+    "main.3f81c72b.css.map": "/sperow_landing/static/css/main.3f81c72b.css.map",
+    "main.b4f08b34.js.map": "/sperow_landing/static/js/main.b4f08b34.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c7a870d.css",
-    "static/js/main.80367d5a.js"
+    "static/css/main.3f81c72b.css",
+    "static/js/main.b4f08b34.js"
   ]
 }
