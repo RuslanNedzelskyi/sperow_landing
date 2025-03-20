@@ -15,7 +15,7 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
       {
         activeSlide === 0 ? <span className='tech_card_title'>{t('Process_Maps_Section')}</span> :
           activeSlide === 1 ? <span className='tech_card_title'>{t('Monitoring')}</span> :
-            activeSlide === 2 ? <span className='tech_card_title'>{t('Crop_Rotation_Fields')}</span> :
+            activeSlide === 2 ? <span className='tech_card_title with_change'>{t('Crop_Rotation_Fields')}</span> :
               <span className='tech_card_title'>{t('Weather')}</span> 
       }
 

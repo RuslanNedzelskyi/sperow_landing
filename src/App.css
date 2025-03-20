@@ -388,6 +388,11 @@ body {
         line-height: 120px;
         white-space: nowrap;
         letter-spacing: 10px;
+
+        &.with_change {
+          font-size: 110px;
+          letter-spacing: 6px;
+        }
       }
 
       .tech_card_text_container {
@@ -452,7 +457,15 @@ body {
       display: flex;
       justify-content: center;
 
-      .ecosystem_img {}
+      .ecosystem_img {
+        width: 1920px;
+      }
+
+      @media (max-width: 1680px) {
+        .ecosystem_img {
+          width: 1680px;
+        }
+      }
     }
 
     .ecosystem_title {

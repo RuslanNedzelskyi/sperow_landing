@@ -1,5 +1,7 @@
 import { forwardRef } from 'react';
 import ecosystemImg from '../assets/images/ecosystem_image.svg';
+import ecosystemImgEn from '../assets/images/ecosystem_image_en.svg';
+import ecosystemImgJp from '../assets/images/ecosystem_image_jp.svg';
 import ecosystem1 from '../assets/images/ecosystem_1.svg';
 import ecosystem2 from '../assets/images/ecosystem_2.svg';
 import ecosystem3 from '../assets/images/ecosystem_3.svg';
@@ -16,7 +18,7 @@ const Ecosystem = forwardRef<HTMLDivElement>((props, ref) => {
 
   return <div ref={ref} className="ecosystem_page">
     <div className='ecosystem_img_container'>
-      <img className="ecosystem_img" src={ecosystemImg} alt="Ecosystem" />
+      <img className="ecosystem_img" src={i18n.language === 'jp' ? ecosystemImgJp : i18n.language === 'en' ? ecosystemImgEn : ecosystemImg} alt="Ecosystem" />
     </div>
     <div className='ecosystem_title'>{t('Ecosystem_Creation_Concept')} <span className='ecosystem_sperow'>{t('Sperow')}</span></div>
     <div className='ecosystem_block_container'>

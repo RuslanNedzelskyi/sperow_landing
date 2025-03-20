@@ -18,24 +18,22 @@ const youtubeUrl: string = 'https://youtube.com/@sperowai?si=A7LZS8KaFqgS-tv6';
 
 interface IMenuItem {
   id: number;
-  nameUa: string;
-  namePl: string;
-  nameJp: string;
+  name: string;
 }
 
 const firstMenu: IMenuItem[] = [
-  { id: 2, nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас' },
-  { id: 3, nameUa: 'AgroAssistant', namePl: 'AgroAssistant', nameJp: 'AgroAssistant' },
-  { id: 4, nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти' },
-  { id: 5, nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема' },
-  { id: 6, nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі' }
+  { id: 2, name: 'About_Us' },
+  { id: 3, name: 'Agroassistant' },
+  { id: 4, name: 'Process_Maps' },
+  { id: 5, name: 'Ecosystem' },
+  { id: 6, name: 'Missions_Goals' }
 ];
 
 const secondMenu: IMenuItem[] = [
-  { id: 7, nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги' },
-  { id: 8, nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності' },
-  { id: 9, nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери' },
-  { id: 10, nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда' },
+  { id: 7, name: 'Advantages' },
+  { id: 8, name: 'Our_Values' },
+  { id: 9, name: 'Partners' },
+  { id: 10, name: 'Team' },
 ];
 
 // const Footer = forwardRef<HTMLDivElement, IFooterProps>((props, ref) => {
@@ -61,12 +59,12 @@ const Footer = forwardRef<HTMLDivElement, IFooterProps>((props) => {
       <div className='contact_menu_container'>
         <div className='first_menu_container'>
           {
-            firstMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{item.nameUa}</div>)
+            firstMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{t(item.name)}</div>)
           }
         </div>
         <div className='second_menu_container'>
           {
-            secondMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{item.nameUa}</div>)
+            secondMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{t(item.name)}</div>)
           }
         </div>
       </div>

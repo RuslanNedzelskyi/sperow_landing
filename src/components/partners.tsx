@@ -7,6 +7,7 @@ import agroednist from '../assets/images/agroednist.svg';
 import kivi from '../assets/images/kivi.svg';
 import profspilka from '../assets/images/profspilka.svg';
 import servig from '../assets/images/servig.svg';
+import { useTranslation } from "react-i18next";
 
 const images = [
   armar,
@@ -18,6 +19,8 @@ const images = [
 ];
 
 const Partners = forwardRef<HTMLDivElement>((props, ref) => {
+const { t, i18n } = useTranslation();
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
@@ -77,7 +80,7 @@ const Partners = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <div ref={ref} className="partners_page">
-      <h2 className="partners_title">Партнери, що довіряють нам</h2>
+      <h2 className="partners_title">{t('Trusted_Partners')}</h2>
       <div className="partners_section">
         <button className="arrow_left_img_container" onClick={scrollLeft}>
           <img src={arrowLeft} alt="Arrow Left" className="arrow_left_img" />
