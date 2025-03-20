@@ -19,6 +19,7 @@ import Values from './components/values';
 import Partners from './components/partners';
 import Command from './components/command';
 import ModalMvp from './components/modal_mvp';
+import { useTranslation } from "react-i18next";
 
 const theme = createTheme({
   palette: {
@@ -56,37 +57,40 @@ const useIsAtBottom = (threshold: number = 0) => {
 interface ISectionRefs {
   id: number;
   ref: React.RefObject<HTMLDivElement | null>;
-  tip: string;
-  nameUa: string;
-  namePl: string;
-  nameJp: string;
+  name: string;
+}
+
+interface ILanguage {
+  code: string,
+  label: string
 }
 
 const sectionRefs: ISectionRefs[] = [
-  { id: 1, ref: React.createRef<HTMLDivElement>(), tip: 'Головна', nameUa: 'Головна', namePl: 'Головна', nameJp: 'Головна' },
-  { id: 2, ref: React.createRef<HTMLDivElement>(), tip: 'Про нас', nameUa: 'Про нас', namePl: 'Про нас', nameJp: 'Про нас' },
-  { id: 3, ref: React.createRef<HTMLDivElement>(), tip: 'Агроасистент', nameUa: 'AgroAssistantAI', namePl: 'AgroAssistantAI', nameJp: 'AgroAssistantAI' },
-  { id: 4, ref: React.createRef<HTMLDivElement>(), tip: 'Технологічні карти', nameUa: 'Технологічні карти', namePl: 'Технологічні карти', nameJp: 'Технологічні карти' },
-  { id: 5, ref: React.createRef<HTMLDivElement>(), tip: 'Екосистема', nameUa: 'Екосистема', namePl: 'Екосистема', nameJp: 'Екосистема' },
-  { id: 6, ref: React.createRef<HTMLDivElement>(), tip: 'Місії та цілі', nameUa: 'Місії та цілі', namePl: 'Місії та цілі', nameJp: 'Місії та цілі' },
-  { id: 7, ref: React.createRef<HTMLDivElement>(), tip: 'Переваги', nameUa: 'Переваги', namePl: 'Переваги', nameJp: 'Переваги' },
-  { id: 8, ref: React.createRef<HTMLDivElement>(), tip: 'Наші цінності', nameUa: 'Наші цінності', namePl: 'Наші цінності', nameJp: 'Наші цінності' },
-  { id: 9, ref: React.createRef<HTMLDivElement>(), tip: 'Партнери', nameUa: 'Партнери', namePl: 'Партнери', nameJp: 'Партнери' },
-  { id: 10, ref: React.createRef<HTMLDivElement>(), tip: 'Команда', nameUa: 'Команда', namePl: 'Команда', nameJp: 'Команда' },
-  { id: 11, ref: React.createRef<HTMLDivElement>(), tip: 'Контакти', nameUa: 'Контакти', namePl: 'Контакти', nameJp: 'Контакти' },
+  { id: 1, ref: React.createRef<HTMLDivElement>(), name: 'Home' },
+  { id: 2, ref: React.createRef<HTMLDivElement>(), name: 'About_Us' },
+  { id: 3, ref: React.createRef<HTMLDivElement>(), name: 'Agroassistant' },
+  { id: 4, ref: React.createRef<HTMLDivElement>(), name: 'Process_Maps' },
+  { id: 5, ref: React.createRef<HTMLDivElement>(), name: 'Ecosystem' },
+  { id: 6, ref: React.createRef<HTMLDivElement>(), name: 'Missions_Goals' },
+  { id: 7, ref: React.createRef<HTMLDivElement>(), name: 'Advantages' },
+  { id: 8, ref: React.createRef<HTMLDivElement>(), name: 'Our_Values' },
+  { id: 9, ref: React.createRef<HTMLDivElement>(), name: 'Partners' },
+  { id: 10, ref: React.createRef<HTMLDivElement>(), name: 'Team' },
+  { id: 11, ref: React.createRef<HTMLDivElement>(), name: 'Contacts' },
 ];
 
-const languagesList = ['UA', 'EN', 'JP'];
+const languagesList: ILanguage[] = [{ code: 'uk', label: 'UA' }, { code: 'en', label: 'EN' }, { code: 'jp', label: 'JP' }];
 
 function App() {
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [selectedLanguage, setSelectedLanguage] = useState('UA');
+  const [selectedLanguage, setSelectedLanguage] = useState(languagesList.find(x => x.code == 'uk')!);
   const [menuLangOpen, setMenuLangOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [activeSection, setActiveSection] = useState<number | null>(null);
   const isAtBottom = useIsAtBottom(50); // Поріг 50 пікселів до кінця
   const [hasReachedBottom, setHasReachedBottom] = useState(false); // Чи користувач досягав низу
   const [open, setOpen] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleCloseMenuOverlay = () => {
     setOpenMenu(!openMenu);
@@ -102,13 +106,14 @@ function App() {
     setOpenMenu(false);
 
     if (opened) {
-      setLangCurrentList(languagesList.filter((x) => x !== selectedLanguage));
+      setLangCurrentList(languagesList.filter((x) => x.code !== selectedLanguage.code));
     }
   };
 
-  const handleLanguageChange = (langCode: string) => {
-    setSelectedLanguage(langCode);
+  const handleLanguageChange = (lang: ILanguage) => {
+    setSelectedLanguage(lang);
     setMenuLangOpen(false);
+    i18n.changeLanguage(lang.code);
   };
 
   const handleScroll = () => {
@@ -203,29 +208,29 @@ function App() {
               <div className="header_right_side">
                 <div className="dropdown_lang_container" ref={dropdownRef}>
                   <div onClick={handleToggleMenu} className="selected_lang">
-                    {selectedLanguage}
+                    {selectedLanguage.label}
                   </div>
                   <div className={menuLangOpen ? 'lang_menu opened' : 'lang_menu'}>
                     {langCurrentList.map((lang) => (
                       <div
-                        key={lang}
+                        key={lang.code}
                         onClick={() => handleLanguageChange(lang)}
                         className="lang_item"
                       >
-                        {lang}
+                        {lang.label}
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className='top_button_testing_container'>
                   <div className='top_button_testing' onClick={handleOpenModal}>
-                    Тестувати MVP
+                    {t("Testing")}
                   </div>
                 </div>
                 <div className='top_button_menu_container'>
                   <div className='top_button_menu' onClick={handleCloseMenuOverlay}>
                     <div className='button_menu_with_hamburger'>
-                      Меню
+                      {t("Menu")}
                       {openMenu ? (
                         <CloseIcon />
                       ) : (
@@ -245,7 +250,7 @@ function App() {
                     <li onClick={() => scrollToSection(section.id)} key={section.id} className={activeSection && activeSection === section.id ? "side-navigation__item side-navigation__item_active" : "side-navigation__item"}>
                       <a className={activeSection && activeSection == section.id ? "side-navigation__link side-navigation__link_active" : "side-navigation__link"}>
                         <span className="test">{section.id}</span>
-                        <div className="side-navigation__title">{section.tip}</div>
+                        <div className="side-navigation__title">{t(section.name)}</div>
                       </a>
                     </li>
                 ))}
@@ -295,8 +300,8 @@ function App() {
             >
               <div className='menu_container'>
                 {sectionRefs.map((section) =>
-                section.id === sectionRefs[sectionRefs.length - 1].id ? undefined :
-                  (<div onClick={() => scrollToSection(section.id)} className='menu_item'>{section.nameUa}</div>)
+                  section.id === sectionRefs[sectionRefs.length - 1].id ? undefined :
+                    (<div onClick={() => scrollToSection(section.id)} className='menu_item'>{t(section.name)}</div>)
                 )}
               </div>
             </Backdrop>

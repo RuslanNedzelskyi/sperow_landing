@@ -3,18 +3,20 @@ import TechCard1 from '../assets/images/macbook _tech_card_1.svg';
 import TechCard2 from '../assets/images/macbook _tech_card_2.svg';
 import TechCard3 from '../assets/images/macbook _tech_card_3.svg';
 import TechCard4 from '../assets/images/macbook _tech_card_4.svg';
+import { useTranslation } from "react-i18next";
 
 const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
+  const { t } = useTranslation();
   const items = [0, 1, 2, 3];
   const [activeSlide, setActiveSlide] = useState(0);
 
   return <div ref={ref} className="tech_card_page">
     <div className='tech_card_content_container'>
       {
-        activeSlide === 0 ? <span className='tech_card_title'>Технологічні карти</span> :
-          activeSlide === 1 ? <span className='tech_card_title'>Моніторинг</span> :
-            activeSlide === 2 ? <span className='tech_card_title'>Сівозміна та поля</span> :
-              <span className='tech_card_title'>Погода</span> 
+        activeSlide === 0 ? <span className='tech_card_title'>{t('Process_Maps_Section')}</span> :
+          activeSlide === 1 ? <span className='tech_card_title'>{t('Monitoring')}</span> :
+            activeSlide === 2 ? <span className='tech_card_title'>{t('Crop_Rotation_Fields')}</span> :
+              <span className='tech_card_title'>{t('Weather')}</span> 
       }
 
       <div className='tech_card_text_container'>
@@ -22,76 +24,60 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
           activeSlide === 0 ?
             <div className='tech_card_sub_text_container'>
               <div className='tech_card_text_item'>
-                <span className='tech_card_text'>Автоматичне створення</span>
-                <br />
-                <span className='tech_card_text'>та прорахунок собівартості</span>
+                <span className='tech_card_text'>{t('Auto_Creation_Cost_Calculation')}</span>
               </div>
               <div className='tech_card_text_item'>
-                <span className='tech_card_text'>Підвищення ефективності</span>
-                <br />
-                <span className='tech_card_text'>кожної операції</span>
+                <span className='tech_card_text'>{t('Operation_Efficiency_Each_Operation')}</span>
               </div>
               <div className='tech_card_text_item'>
-                <span className='tech_card_text'>Аналіз та рекомендації</span>
+                <span className='tech_card_text'>{t('Analysis_Recommendations')}</span>
               </div>
               <div className='tech_card_text_item'>
-                <span className='tech_card_text'>Моніторинг та коригування</span>
-                <br />
-                <span className='tech_card_text'>в реальному часі</span>
+                <span className='tech_card_text'>{t('Real_Time_Monitoring')}</span>
               </div>
             </div> :
             activeSlide === 1 ?
               <div className='tech_card_sub_text_container'>
                 <div className='tech_card_text_item'>
-                  <span className='tech_card_text'>Попередження хвороб та </span>
-                  <br />
-                  <span className='tech_card_text'>шкідників</span>
+                  <span className='tech_card_text'>{t('Disease_Pest_Warning')}</span>
                 </div>
                 <div className='tech_card_text_item'>
-                  <span className='tech_card_text'>Відслідковування вегетації,</span>
-                  <br />
-                  <span className='tech_card_text'>оцінка ризикових факторів</span>
-                  <br />
-                  <span className='tech_card_text'>та шляхи вирішення</span>
+                  <span className='tech_card_text'>{t('Vegetation_Tracking_Risks')}</span>
                 </div>
                 <div className='tech_card_text_item'>
-                  <span className='tech_card_text'>Історія моніторингу</span>
+                  <span className='tech_card_text'>{t('Monitoring_History')}</span>
                 </div>
                 <div className='tech_card_text_item'>
-                  <span className='tech_card_text'>Персональний моніторинг </span>
-                  <br />
-                  <span className='tech_card_text'>кожної культури на кожній</span>
-                  <br />
-                  <span className='tech_card_text'>ділянці</span>
+                  <span className='tech_card_text'>{t('Personal_Crop_Monitoring')}</span>
                 </div>
               </div> :
               activeSlide === 2 ?
                 <div className='tech_card_sub_text_container'>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Підбір найприбутковішої сівозміни</span>
+                    <span className='tech_card_text'>{t('Profitable_Crop_Rotation')}</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Рекомендації стосовно наступних дій</span>
+                    <span className='tech_card_text'>{t('Next_Step_Recommendations')}</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Точне землеробство та карта поля</span>
+                    <span className='tech_card_text'>{t('Precision_Farming_Field_Map')}</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Історія полів та ділянок</span>
+                    <span className='tech_card_text'>{t('Field_Plot_History')}</span>
                   </div>
                 </div> :
                 <div className='tech_card_sub_text_container'>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Аналіз та прогнозування погоди</span>
+                    <span className='tech_card_text'>{t('Weather_Analysis_Forecast')}</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Вплив погоди на кожну культуру </span>
+                    <span className='tech_card_text'>{t('Weather_Impact_Crops')}</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Різноманітна статистика</span>
+                    <span className='tech_card_text'>{t('Various_Statistics')}</span>
                   </div>
                   <div className='tech_card_text_item'>
-                    <span className='tech_card_text'>Фази луни та прикмети</span>
+                    <span className='tech_card_text'>{t('Moon_Phases_Signs')}</span>
                   </div>
                 </div>
         }

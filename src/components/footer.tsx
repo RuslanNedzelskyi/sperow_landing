@@ -4,6 +4,7 @@ import telegram from '../assets/images/telegram.svg';
 import instagram from '../assets/images/instagram.svg';
 import facebook from '../assets/images/facebook.svg';
 import youtube from '../assets/images/youtube.svg';
+import { useTranslation } from "react-i18next";
 
 interface IFooterProps {
   scrollToSection: (id: number) => void;
@@ -39,6 +40,8 @@ const secondMenu: IMenuItem[] = [
 
 // const Footer = forwardRef<HTMLDivElement, IFooterProps>((props, ref) => {
 const Footer = forwardRef<HTMLDivElement, IFooterProps>((props) => {
+  const { t, i18n } = useTranslation();
+
   const handleScrollToSerction = (idSection: number) => {
     props.scrollToSection(idSection);
   }
@@ -68,7 +71,7 @@ const Footer = forwardRef<HTMLDivElement, IFooterProps>((props) => {
         </div>
       </div>
       <div className='contact_testing_button_container'>
-        <div className='contact_testing_button' onClick={props.handleOpenModal}>Тестувати MVP</div>
+        <div className='contact_testing_button' onClick={props.handleOpenModal}>{t('Testing')}</div>
       </div>
     </div>
     <div className='social_media_container'>
