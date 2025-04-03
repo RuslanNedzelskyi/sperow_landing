@@ -1,23 +1,148 @@
-import { Modal } from '@mui/material';
-import { forwardRef } from 'react';
+import { Button, FormControl, Modal, TextField } from '@mui/material';
+import { MuiTelInput } from 'mui-tel-input';
+import { forwardRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import axios from 'axios';
 
 interface IModal {
     open: boolean;
     handleClose: () => void;
 }
 
-const ModalMvp = forwardRef<HTMLDivElement, IModal>((props) => {
+const ModalMvp = forwardRef<HTMLDivElement, IModal>((props, ref) => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        phone: '',
+        email: ''
+    });
+
+    const handleChangePhone = (newValue: string) => {
+        setFormData(prev => ({ ...prev, phone: newValue }));
+    };
+
+    const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const to: string = 'ruslan.nedzelskyi@gmail.com';
+    const  subject: string = 'Test';
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const templateParams = {
+            to_email: 'ruslan.nedzelskyi@gmail.com',
+            subject: 'Test',
+            message: 'name:' + formData.fullName + ', number: ' + formData.phone + ', email: ' + formData.email,
+        };
+
+        emailjs
+            .send(
+                'service_xr69nqg', // Замініть на ваш Service ID
+                'template_kttj8fu', // Замініть на ваш Template ID
+                templateParams,
+                'uJo0glsKzEVcsUS-Q' // Замініть на ваш Public Key
+            )
+            .then(
+                (result) => {
+                    debugger;
+                },
+                (error) => {
+                    debugger;
+                }
+            );
+
+        props.handleClose();
+    };
+
+    // const handleSubmitGoogle = async (e: any) => {
+    //     e.preventDefault();
+
+    //     const message: string = 'name:' + formData.fullName + ', number: ' + formData.phone + ', email: ' + formData.email;
+
+    //     try {
+    //       const response = await axios.post('http://localhost:5000/send-email', {
+    //         to,
+    //         subject,
+    //         message,
+    //       });
+
+    //       debugger;
+    //     //   setMessage(response.data);
+    //     } catch (error) {
+    //         debugger;
+    //     //   setMessage('Error: ' + error.message);
+    //     }
+    //   };
+
+    const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (e.target === e.currentTarget) {
+            props.handleClose();
+        }
+    };
+
     return (
         <Modal
             open={props.open}
             onClose={props.handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
+            onClick={handleModalClick}
         >
             <div className="modal-content">
-                <h2>Давайте зростати разом</h2>
-                <p>Заповніть заявку на тестування MVP і ми звʼяжемось з Вами</p>
-                <button onClick={props.handleClose}>Відправити заявку</button>
+                <FormControl component="form" onSubmit={handleSubmit}>
+                    <div className='modal_title'>Давайте зростати разом</div>
+                    <div className='modal_subtitle'>Заповніть заявку на тестування MVP і ми звʼяжемось з Вами</div>
+
+                    <div className='modal_text_fields_container'>
+                        <div className='modal_text_container'>
+                            <TextField
+                                slotProps={{ htmlInput: { maxLength: 100 } }}
+                                required
+                                name="fullName"
+                                className='modal_text_field'
+                                id="outlined-basic"
+                                label="ПІБ"
+                                variant="outlined"
+                                value={formData.fullName}
+                                onChange={handleChangeInput}
+                            />
+                        </div>
+                        <div className='modal_text_container'>
+                            <MuiTelInput
+                                slotProps={{ htmlInput: { maxLength: 18 } }}
+                                value={formData.phone}
+                                onChange={handleChangePhone}
+                                required
+                                name="phone"
+                                className='modal_text_field'
+                                id="outlined-basic"
+                                label="Номер телефону"
+                                variant="outlined"
+                            />
+                        </div>
+                        <div className='modal_text_container last'>
+                            <TextField
+                                slotProps={{ htmlInput: { maxLength: 150 } }}
+                                name="email"
+                                className='modal_text_field'
+                                id="outlined-basic"
+                                label="Електронна пошта"
+                                variant="outlined"
+                                value={formData.email}
+                                onChange={handleChangeInput}
+                            />
+                        </div>
+                    </div>
+                    <div className='modal_button_container'>
+                        <Button
+                            type="submit"
+                            className='modal_button'
+                            variant="contained"
+                        >
+                            Відправити заявку
+                        </Button>
+                    </div>
+                </FormControl>
             </div>
         </Modal>
     );

@@ -88,7 +88,7 @@ const { t, i18n } = useTranslation();
         <div className="partners_container" ref={scrollRef}>
           {images.map((image, index) => (
             <div key={index} className="first_partner_container">
-              <img src={image} alt={`Partner ${index + 1}`} className={index === 2 ? "scroll_image with_width" : "scroll_image"} />
+              <img src={image} alt={`Partner ${index + 1}`} className={index === 5 || index === 3 || index === 2 ? "scroll_image with_width" : "scroll_image"} />
             </div>
           ))}
         </div>

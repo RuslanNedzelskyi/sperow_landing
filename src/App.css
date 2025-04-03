@@ -33,6 +33,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Raleway Light';
+  src: url('./fonts/Raleway-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 /* Загальні стилі */
@@ -366,6 +372,14 @@ body {
             width: 800px;
           }
         }
+
+        @media (max-width: 1440px) {
+          .agro_ai_photo {
+            height: 596px;
+            vertical-align: text-top;
+            width: 600px;
+          }
+        }
       }
     }
   }
@@ -466,6 +480,12 @@ body {
           width: 1680px;
         }
       }
+
+      @media (max-width: 1440px) {
+        .ecosystem_img {
+          width: 1440px;
+        }
+      }
     }
 
     .ecosystem_title {
@@ -506,6 +526,22 @@ body {
             color: #043129;
             text-align: center;
           }
+
+          @media (max-width: 1440px) {
+            .ecosystem_item_img_container {
+              width: 220px;
+              height: 120px;
+            }
+
+            .ecosystem_text {
+              width: 220px;
+              font-family: 'Raleway Regular';
+              font-size: 26px;
+              color: #043129;
+              text-align: center;
+              padding-top: 10px;
+            }
+          }
         }
       }
 
@@ -530,6 +566,22 @@ body {
             font-size: 26px;
             color: #043129;
             text-align: center;
+          }
+
+          @media (max-width: 1440px) {
+            .ecosystem_item_img_container {
+              width: 220px;
+              height: 120px;
+            }
+
+            .ecosystem_text {
+              width: 220px;
+              font-family: 'Raleway Regular';
+              font-size: 26px;
+              color: #043129;
+              text-align: center;
+              padding-top: 10px;
+            }
           }
         }
       }
@@ -640,6 +692,17 @@ body {
       }
     }
 
+    @media (max-width: 1440px) {
+      .advantages_title {
+        font-family: 'Raleway Bold';
+        font-size: 48px;
+        text-align: center;
+        color: #FEF5E2;
+        margin-top: -50px;
+        width: 240px;
+      }
+    }
+
     .advantages_images_container {
       display: flex;
 
@@ -657,6 +720,14 @@ body {
             width: 650px;
           }
         }
+
+        @media (max-width: 1440px) {
+          .advantages_left_image {
+            height: 596px;
+            vertical-align: text-top;
+            width: 520px;
+          }
+        }
       }
 
       .advantages_right_image_container {
@@ -672,6 +743,15 @@ body {
             height: 596px;
             vertical-align: text-top;
             width: 634px;
+            margin-left: -38px;
+          }
+        }
+
+        @media (max-width: 1440px) {
+          .advantages_right_image {
+            height: 596px;
+            vertical-align: text-top;
+            width: 505px;
             margin-left: -38px;
           }
         }
@@ -709,11 +789,35 @@ body {
     .three_images_container {
       display: flex;
       justify-content: space-between;
+
+      .command_image {
+        width: 453px;
+        height: 394px;
+      }
+
+      @media (max-width: 1440px) {
+        .command_image {
+          width: 400px;
+          height: 340px;
+        }
+      }
     }
 
     .two_images_container {
       display: flex;
       justify-content: space-around;
+
+      .command_image {
+        width: 453px;
+        height: 394px;
+      }
+
+      @media (max-width: 1440px) {
+        .command_image {
+          width: 400px;
+          height: 340px;
+        }
+      }
     }
   }
 
@@ -1179,6 +1283,18 @@ body {
   }
 }
 
+@media (max-width: 1440px) {
+  .scroll_image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  
+    &.with_width {
+      max-width: 72%;
+    }
+  }
+}
+
 .arrow_left_img_container,
 .arrow_right_img_container {
   position: absolute;
@@ -1221,17 +1337,109 @@ body {
   }
 }
 
+@media (max-width: 1440px) {
+  .partners_section {
+    max-width: 1440px;
+  }
+
+  .partners_container {
+    width: 1100px;
+    /* Збільшено до 1300px для 1680px */
+  }
+
+  .first_partner_container {
+    width: 550px;
+    /* Один логотип займає половину від 1300px */
+  }
+}
+
 .modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 860px;
-  height: 560px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
+  height: 630px;
+  background-color: #043129;
+  border-radius: 30px;
   text-align: center;
-  flex-direction: column;
-  align-items: center;
+  outline: none;
+
+  .modal_title {
+    color: #FFBC35;
+    font-family: 'Raleway Regular';
+    font-size: 58px;
+    padding-top: 30px;
+  }
+
+  .modal_subtitle {
+    color: #FEF5E2;
+    font-family: 'Raleway Medium';
+    font-size: 35px;
+    width: 630px;
+    display: flex;
+    justify-self: anchor-center;
+    padding: 30px 0 30px 0;
+  }
+
+  .modal_text_fields_container {
+    width: 700px;
+    place-self: center;
+
+    .modal_text_container {
+      padding-bottom: 30px;
+
+      .modal_text_field {
+        width: 400px;
+
+        div {
+          color: #FEF5E2;
+          border-color: #FEF5E2;
+          border-radius: 30px;
+          font-family: 'Raleway Light';
+          font-size: 18px;
+        }
+
+        input {
+          color: #FEF5E2;
+          border-color: #FEF5E2;
+          font-family: 'Raleway Light';
+          font-size: 18px;
+        }
+
+        label {
+          color: #FEF5E2;
+          border-color: #FEF5E2;
+          font-family: 'Raleway Light';
+          font-size: 18px;
+        }
+
+        fieldset {
+          color: #FEF5E2;
+          border-color: #FEF5E2;
+          font-family: 'Raleway Light';
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .modal_button_container {
+    .modal_button {
+      border-radius: 20px;
+      height: 50px;
+      width: 250px;
+      background-color: #FFBC35;
+      font-size: 18px;
+      color: #FEF5E2;
+      font-family: 'Raleway SemiBold';
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-transform: none;
+    }
+
+    .modal_button:hover {
+      box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+    }
+  }
 }

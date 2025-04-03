@@ -8,6 +8,7 @@ const AboutUs = forwardRef<HTMLDivElement>((props, ref) => {
     playerVars: {
       autoplay: 0,
     },
+    class: 'video_frame'
   };
 
   const onReady = (event: any) => {
