@@ -1,8 +1,8 @@
 import React, { forwardRef, useState } from 'react';
-import TechCard1 from '../assets/images/macbook _tech_card_1.svg';
-import TechCard2 from '../assets/images/macbook _tech_card_2.svg';
-import TechCard3 from '../assets/images/macbook _tech_card_3.svg';
-import TechCard4 from '../assets/images/macbook _tech_card_4.svg';
+import TechCard1 from '../assets/images/macbook_tech_card_1.svg';
+import TechCard2 from '../assets/images/macbook_tech_card_2.svg';
+import TechCard3 from '../assets/images/macbook_tech_card_3.svg';
+import TechCard4 from '../assets/images/macbook_tech_card_4.svg';
 import { useTranslation } from "react-i18next";
 
 const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
