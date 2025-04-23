@@ -1578,3 +1578,20 @@ body {
     }
   }
 }
+
+
+@media (max-width: 1440px) {
+  .partners_section {
+    max-width: 1440px;
+  }
+
+  .partners_container {
+    width: 1100px;
+    /* Збільшено до 1300px для 1680px */
+  }
+
+  .first_partner_container {
+    width: 550px;
+    /* Один логотип займає половину від 1300px */
+  }
+}
