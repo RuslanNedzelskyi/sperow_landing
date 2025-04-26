@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.230f70f2.css",
-    "main.js": "/static/js/main.560a2a99.js",
+    "main.css": "/static/css/main.83ce33c3.css",
+    "main.js": "/static/js/main.ee31149a.js",
     "static/media/sperow_background_video.mp4": "/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/advantages.jpg": "/static/media/advantages.2a93137af7201bac0641.jpg",
     "static/media/agro_ai.jpg": "/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
@@ -39,8 +39,8 @@
     "static/media/profspilka.svg": "/static/media/profspilka.7fcd9d0e084614d6ee1285e8f1b19b94.svg",
     "static/media/logo_name.svg": "/static/media/logo_name.0b19040ac852303608b17284c5af10b2.svg",
     "static/media/agroednist.svg": "/static/media/agroednist.8d3af44a7c06f40c088a5ea3baa7c884.svg",
-    "static/media/Illya_en.svg": "/static/media/Illya_en.67ca9713ad814f0271d8eee45b64040a.svg",
-    "static/media/Illya.svg": "/static/media/Illya.229cbb6163a74e03355f2742ae9baa9a.svg",
+    "static/media/Illya_en.svg": "/static/media/Illya_en.58ab7da9c79dab45caa104e6b71c2aeb.svg",
+    "static/media/Illya.svg": "/static/media/Illya.6e8dbbbd9de2a673252a5a11e939dbaf.svg",
     "static/media/ecosystem_2.svg": "/static/media/ecosystem_2.962ee3d213f5acd9546450d0943c80e7.svg",
     "static/media/ecosystem_5.svg": "/static/media/ecosystem_5.42f06c36a5475caa3000a874e8e7a7a1.svg",
     "static/media/ecosystem_3.svg": "/static/media/ecosystem_3.5a769898e8ddb20c915555ed7ba7e7ec.svg",
@@ -62,11 +62,11 @@
     "static/media/arrow_left.svg": "/static/media/arrow_left.bfa76196317e546d48cc1a938fcb0d3d.svg",
     "static/media/arrow_right.svg": "/static/media/arrow_right.44e6d4713f93ea18113c4a33b7be788d.svg",
     "static/media/arrow.svg": "/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
-    "main.230f70f2.css.map": "/static/css/main.230f70f2.css.map",
-    "main.560a2a99.js.map": "/static/js/main.560a2a99.js.map"
+    "main.83ce33c3.css.map": "/static/css/main.83ce33c3.css.map",
+    "main.ee31149a.js.map": "/static/js/main.ee31149a.js.map"
   },
   "entrypoints": [
-    "static/css/main.230f70f2.css",
-    "static/js/main.560a2a99.js"
+    "static/css/main.83ce33c3.css",
+    "static/js/main.ee31149a.js"
   ]
 }
