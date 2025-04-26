@@ -881,7 +881,7 @@ body {
     align-content: center;
 
     .values_image_container {
-      justify-self: center;
+      text-align: center;
 
       .values_image {}
     }
