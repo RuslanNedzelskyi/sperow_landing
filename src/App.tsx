@@ -147,6 +147,8 @@ function App() {
   };
 
   useEffect(() => {
+    document.title = 'Sperow';
+
     if (sectionRefs && sectionRefs.length) {
       scrollToSection(1);
     }
