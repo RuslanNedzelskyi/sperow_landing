@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.83ce33c3.css",
-    "main.js": "/static/js/main.ee31149a.js",
+    "main.js": "/static/js/main.f50851e1.js",
     "static/media/sperow_background_video.mp4": "/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/advantages.jpg": "/static/media/advantages.2a93137af7201bac0641.jpg",
     "static/media/agro_ai.jpg": "/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
@@ -63,10 +63,10 @@
     "static/media/arrow_right.svg": "/static/media/arrow_right.44e6d4713f93ea18113c4a33b7be788d.svg",
     "static/media/arrow.svg": "/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
     "main.83ce33c3.css.map": "/static/css/main.83ce33c3.css.map",
-    "main.ee31149a.js.map": "/static/js/main.ee31149a.js.map"
+    "main.f50851e1.js.map": "/static/js/main.f50851e1.js.map"
   },
   "entrypoints": [
     "static/css/main.83ce33c3.css",
-    "static/js/main.ee31149a.js"
+    "static/js/main.f50851e1.js"
   ]
 }
