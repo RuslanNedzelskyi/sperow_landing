@@ -25,24 +25,24 @@ const ModalMvp = forwardRef<HTMLDivElement, IModal>((props, ref) => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const to: string = 'ruslan.nedzelskyi@gmail.com';
+    const to: string = 'sperow.development@gmail.com';
     const  subject: string = 'Test';
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
         const templateParams = {
-            to_email: 'ruslan.nedzelskyi@gmail.com',
+            to_email: 'sperow.development@gmail.com',
             subject: 'Test',
             message: 'name:' + formData.fullName + ', number: ' + formData.phone + ', email: ' + formData.email,
         };
 
         emailjs
             .send(
-                'service_xr69nqg', // Замініть на ваш Service ID
-                'template_kttj8fu', // Замініть на ваш Template ID
+                'service_hmn9m2i', // Замініть на ваш Service ID
+                'template_hrhqnnb', // Замініть на ваш Template ID
                 templateParams,
-                'uJo0glsKzEVcsUS-Q' // Замініть на ваш Public Key
+                'xq1NYec4TPpT1hrJy' // Замініть на ваш Public Key
             )
             .then(
                 (result) => {
