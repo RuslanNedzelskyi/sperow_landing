@@ -5,12 +5,28 @@ import TechCard3 from '../assets/images/macbook_tech_card_3.svg';
 import TechCard4 from '../assets/images/macbook_tech_card_4.svg';
 import { useTranslation } from "react-i18next";
 import { useDeviceType } from '../hooks/useDeviceType';
+import { useSwipeable } from 'react-swipeable';
+
+const images = [
+  TechCard1,
+  TechCard2,
+  TechCard3,
+  TechCard4
+];
+
 
 const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
   const { t } = useTranslation();
   const items = [0, 1, 2, 3];
-  const [activeSlide, setActiveSlide] = useState(0);
   const deviceType = useDeviceType();
+
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => setActiveSlide((prev) => (prev + 1) % images.length),
+    onSwipedRight: () => setActiveSlide((prev) => (prev - 1 + images.length) % images.length),
+    trackMouse: true,
+  });
 
   return <div ref={ref} className="tech_card_page">
     <div className='tech_card_content_container'>
@@ -25,19 +41,20 @@ const TechCard = forwardRef<HTMLDivElement>((props, ref) => {
         <div className='tech_card_with_img_mobile'>
           <div className='tech_card_img_container'>
             {
-              activeSlide === 0 ?
-                <img className="logo_card_img" src={TechCard1} alt="Tech Card" /> :
-                activeSlide === 1 ?
-                  <img className="logo_card_img" src={TechCard2} alt="Tech Card" /> :
-                  activeSlide === 2 ?
-                    <img className="logo_card_img" src={TechCard3} alt="Tech Card" /> :
-                    <img className="logo_card_img" src={TechCard4} alt="Tech Card" />
+
+              <div className="slider-container" {...swipeHandlers}>
+                <img src={images[activeSlide]} alt="Tech Card" className="logo_card_img slider-image" />
+                <div className="slider-dots">
+                  {images.map((_, i) => (
+                    <span
+                      key={i}
+                      className={i === activeSlide ? 'dot active' : 'dot'}
+                      onClick={() => setActiveSlide(i)}
+                    />
+                  ))}
+                </div>
+              </div>
             }
-            <div className='menu_slides_container'>
-              {items.map((item, index) => (
-                <div onClick={() => setActiveSlide(index)} key={item} className={activeSlide === index ? 'menu-item active' : 'menu-item'}></div>
-              ))}
-            </div>
           </div>
           <div className='tech_card_text_container'>
             {

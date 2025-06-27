@@ -922,80 +922,290 @@ body {
     }
   }
 
+  @media (max-width: 1300px) {
+    .ecosystem_page {
+      background-color: #FEF5E2;
+
+      .ecosystem_img_container {
+        display: flex;
+        justify-content: center;
+
+        .ecosystem_img {
+          max-width: 100%;
+        }
+      }
+
+      .ecosystem_title {
+        color: #043129;
+        font-family: 'Raleway SemiBold';
+        font-size: 18px;
+        text-align: center;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        .ecosystem_sperow {
+          font-family: 'Raleway Medium';
+          font-size: 24px;
+        }
+      }
+
+      .ecosystem_block_container {
+        .ecosystem_first_block {
+          display: flex;
+          justify-content: center;
+          height: 180px;
+          padding-bottom: 0px;
+
+          .ecosystem_item {
+            text-align: center;
+            padding: 0 10px 0 10px;
+
+            .ecosystem_item_img_container {
+              width: 80px;
+              height: 80px;
+
+              .ecosystem_item_img {
+                width: 80px;
+              }
+            }
+
+            .ecosystem_text {
+              width: 80px;
+              font-family: 'Raleway Regular';
+              font-size: 10px;
+              color: #043129;
+              text-align: center;
+            }
+          }
+        }
+
+        .ecosystem_second_block {
+          display: flex;
+          justify-content: center;
+          height: 180px;
+
+          .ecosystem_item {
+            text-align: center;
+            padding: 0 10px 0 10px;
+
+            .ecosystem_item_img_container {
+              width: 80px;
+              height: 80px;
+
+              .ecosystem_item_img {
+                width: 80px;
+              }
+            }
+
+            .ecosystem_text {
+              width: 80px;
+              font-family: 'Raleway Regular';
+              font-size: 10px;
+              color: #043129;
+              text-align: center;
+            }
+          }
+        }
+
+        .ecosystem_third_block {
+          display: flex;
+          justify-content: center;
+          height: 180px;
+
+          .ecosystem_item {
+            text-align: center;
+            padding: 0 10px 0 10px;
+
+            .ecosystem_item_img_container {
+              width: 80px;
+              height: 80px;
+
+              .ecosystem_item_img {
+                width: 80px;
+              }
+            }
+
+            .ecosystem_text {
+              width: 80px;
+              font-family: 'Raleway Regular';
+              font-size: 10px;
+              color: #043129;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .mission_page {
     background-color: #FEF5E2;
     height: 100%;
     display: flex;
     padding: 90px 100px 90px 100px;
 
-    .mission_content_container {
-      font-family: 'Raleway SemiBold';
-      font-size: 40px;
-      color: #FFBC35;
-      width: 50%;
+    .mission_all_container {
+      background-color: #FEF5E2;
+      height: 100%;
+      display: block;
+      padding: 10px 30px 30px 30px;
 
-      .our_mission_text_container {
-        padding-left: 24px;
-        border-left: 3px solid #FFBC35;
-        line-height: 50px;
+      .mission_content_container {
+        font-family: 'Raleway SemiBold';
+        font-size: 40px;
+        color: #FFBC35;
+        width: 50%;
 
-        .our_mission_text {
-          padding-bottom: 70px;
+        .our_mission_text_container {
+          padding-left: 24px;
+          border-left: 3px solid #FFBC35;
+          line-height: 50px;
 
-          .our_mission {
-            font-family: 'Raleway Bold';
-            font-size: 64px;
+          .our_mission_text {
+            padding-bottom: 70px;
+
+            .our_mission {
+              font-family: 'Raleway Bold';
+              font-size: 64px;
+            }
           }
+
+          .our_mission_text_continue {}
         }
 
-        .our_mission_text_continue {}
+        .mission_button_container {
+          padding-top: 70px;
+
+          .mission_button {
+            display: flex;
+            border-radius: 20px;
+            height: 65px;
+            width: 290px;
+            background-color: #FFBC35;
+            font-size: 26px;
+            color: #FEF5E2;
+            font-family: 'Raleway Bold';
+            cursor: pointer;
+            text-align: center;
+            justify-content: space-around;
+
+            .mission_button_text {
+              align-content: center;
+            }
+
+            .mvp_button {
+              width: 65px;
+            }
+          }
+
+          .mission_button:hover {
+            box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+          }
+        }
       }
 
-      .mission_button_container {
-        padding-top: 70px;
+      .mission_text_container {
+        font-family: 'Raleway Medium';
+        font-size: 26px;
+        color: #043129;
+        width: 50%;
 
-        .mission_button {
-          display: flex;
-          border-radius: 20px;
-          height: 65px;
-          width: 290px;
-          background-color: #FFBC35;
-          font-size: 26px;
-          color: #FEF5E2;
-          font-family: 'Raleway Bold';
-          cursor: pointer;
-          text-align: center;
-          justify-content: space-around;
-
-          .mission_button_text {
-            align-content: center;
-          }
-
-          .mvp_button {
-            width: 65px;
-          }
-        }
-
-        .mission_button:hover {
-          box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+        .mission_text_item {
+          margin-bottom: 15px;
+          border: 1px solid #043129;
+          border-radius: 10px;
+          height: 150px;
+          align-content: center;
+          text-align: justify;
+          padding: 0 20px 0 20px;
         }
       }
     }
+  }
 
-    .mission_text_container {
-      font-family: 'Raleway Medium';
-      font-size: 26px;
-      color: #043129;
-      width: 50%;
+  @media (max-width: 1300px) {
+    .mission_page {
+      background-color: #FEF5E2;
+      height: 100%;
+      display: block;
+      padding: 10px 30px 30px 30px;
 
-      .mission_text_item {
-        margin-bottom: 15px;
-        border: 1px solid #043129;
-        border-radius: 10px;
-        height: 150px;
-        align-content: center;
-        text-align: justify;
-        padding: 0 20px 0 20px;
+      .mission_all_container {
+        padding-bottom: 0px;
+
+        .mission_content_container {
+          font-family: 'Raleway SemiBold';
+          font-size: 15px;
+          color: #FFBC35;
+          width: 100%;
+          padding-bottom: 20px;
+
+          .our_mission_text_container {
+            padding-left: 15px;
+            border-left: 3px solid #FFBC35;
+            line-height: 20px;
+
+            .our_mission_text {
+              padding-bottom: 10px;
+
+              .our_mission {
+                font-family: 'Raleway Bold';
+                font-size: 18px;
+              }
+            }
+
+            .our_mission_text_continue {}
+          }
+
+
+        }
+
+        .mission_text_container {
+          font-family: 'Raleway Medium';
+          font-size: 12px;
+          color: #043129;
+          width: 100%;
+
+          .mission_text_item {
+            margin-bottom: 15px;
+            border: 1px solid #043129;
+            border-radius: 10px;
+            height: 100px;
+            align-content: center;
+            text-align: justify;
+            padding: 0 20px 0 20px;
+          }
+        }
+
+        .mission_button_container {
+          padding-top: 0px;
+
+          .mission_button {
+            display: flex;
+            border-radius: 20px;
+            height: 40px;
+            width: 180px;
+            background-color: #FFBC35;
+            font-size: 14px;
+            color: #FEF5E2;
+            font-family: 'Raleway Bold';
+            cursor: pointer;
+            text-align: center;
+            justify-content: space-around;
+
+            .mission_button_text {
+              align-content: center;
+            }
+
+            .mvp_button {
+              width: 40px;
+            }
+          }
+
+          .mission_button:hover {
+            box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+          }
+        }
       }
     }
   }
@@ -1093,19 +1303,65 @@ body {
     }
   }
 
-  @media (max-width: 1680px) {
+  @media (max-width: 1300px) {
     .advantages_page {
-      height: 70%;
-      min-height: 70vh;
-      padding: 100px 100px 0px 100px;
-    }
-  }
+      background-color: #043129;
+      height: 80%;
+      min-height: 80vh;
+      padding: 50px 30px 50px 30px;
+      background-size: cover;
+      background-position: center;
+      max-width: 100%;
+      min-width: 100%;
 
-  @media (max-width: 1440px) {
-    .advantages_page {
-      height: 70%;
-      min-height: 70vh;
-      padding: 100px 100px 0px 100px;
+      .advantages_all_container {
+        .advantages_title {
+          font-family: 'Raleway Bold';
+          font-size: 28px;
+          text-align: center;
+          color: #FEF5E2;
+          margin-top: -20px;
+          width: 170px;
+          place-self: center;
+        }
+      }
+
+      .advantages_row {
+        display: flex;
+        text-align: center;
+        padding-top: 20px;
+
+        .advantages_container {
+          width: 50%;
+          text-align: center;
+        }
+
+        .advantages_image_container {
+          .advantages_image {}
+        }
+
+        .advantages_text_container {
+          .advantages_sub_title {
+            font-family: 'Raleway Bold';
+            font-size: 16px;
+            text-align: center;
+            color: #FEF5E2;
+            margin-top: 0px;
+            width: 140px;
+            place-self: center;
+          }
+
+          .advantages_text {
+            font-family: 'Raleway Regular';
+            font-size: 10px;
+            text-align: center;
+            color: #FEF5E2;
+            margin-top: 0px;
+            width: 140px;
+            place-self: center;
+          }
+        }
+      }
     }
   }
 
@@ -1119,6 +1375,21 @@ body {
       text-align: center;
 
       .values_image {}
+    }
+  }
+
+  @media (max-width: 1300px) {
+    .values_page {
+      background-color: #FEF5E2;
+      height: 90%;
+      min-height: 30vh;
+      align-content: center;
+
+      .values_image_container {
+        text-align: center;
+
+        .values_image {}
+      }
     }
   }
 
@@ -1947,4 +2218,40 @@ body {
     width: 550px;
     /* Один логотип займає половину від 1300px */
   }
+}
+
+
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  touch-action: pan-x;
+}
+
+.slider-image {
+  width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #FFBC35;
 }
