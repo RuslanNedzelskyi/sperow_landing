@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sperow_landing/static/css/main.e0a71b8f.css",
-    "main.js": "/sperow_landing/static/js/main.74ce3d77.js",
+    "main.css": "/sperow_landing/static/css/main.191ab607.css",
+    "main.js": "/sperow_landing/static/js/main.1a500f03.js",
     "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/advantages.jpg": "/sperow_landing/static/media/advantages.2a93137af7201bac0641.jpg",
     "static/media/agro_ai.jpg": "/sperow_landing/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
@@ -54,19 +54,23 @@
     "static/media/ecosystem_9.svg": "/sperow_landing/static/media/ecosystem_9.950cb8855a2e1e12654626ecc8cc26bc.svg",
     "static/media/logo_light.svg": "/sperow_landing/static/media/logo_light.402c6c147cb1aac7e4584dc9308730c7.svg",
     "static/media/armar.svg": "/sperow_landing/static/media/armar.c353d708bd1ea85fa473bd3f0a975d17.svg",
+    "static/media/advantages_2.svg": "/sperow_landing/static/media/advantages_2.fa8d50163a79383bb9ce129989072393.svg",
     "static/media/telegram.svg": "/sperow_landing/static/media/telegram.6e59a52f6940e894ba4a86c97848f3c2.svg",
     "static/media/youtube.svg": "/sperow_landing/static/media/youtube.2442fcebbb8a94b91599812ca12e4dbf.svg",
     "static/media/instagram.svg": "/sperow_landing/static/media/instagram.0a0ba7dbfac5af9f621b871dd49d9cb1.svg",
     "static/media/facebook.svg": "/sperow_landing/static/media/facebook.822bedf63b8c8d6d79600f748082e247.svg",
+    "static/media/advantages_1.svg": "/sperow_landing/static/media/advantages_1.794619ced4c872e2e30b716476fb8618.svg",
     "index.html": "/sperow_landing/index.html",
+    "static/media/advantages_4.svg": "/sperow_landing/static/media/advantages_4.8078d4ab748996887ccaa7edf1e1e5df.svg",
+    "static/media/advantages_3.svg": "/sperow_landing/static/media/advantages_3.8b5548f61caf36a8e4ac2ec60af422ee.svg",
     "static/media/arrow_left.svg": "/sperow_landing/static/media/arrow_left.bfa76196317e546d48cc1a938fcb0d3d.svg",
     "static/media/arrow_right.svg": "/sperow_landing/static/media/arrow_right.44e6d4713f93ea18113c4a33b7be788d.svg",
     "static/media/arrow.svg": "/sperow_landing/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
-    "main.e0a71b8f.css.map": "/sperow_landing/static/css/main.e0a71b8f.css.map",
-    "main.74ce3d77.js.map": "/sperow_landing/static/js/main.74ce3d77.js.map"
+    "main.191ab607.css.map": "/sperow_landing/static/css/main.191ab607.css.map",
+    "main.1a500f03.js.map": "/sperow_landing/static/js/main.1a500f03.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0a71b8f.css",
-    "static/js/main.74ce3d77.js"
+    "static/css/main.191ab607.css",
+    "static/js/main.1a500f03.js"
   ]
 }
