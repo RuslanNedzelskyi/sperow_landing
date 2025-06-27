@@ -65,6 +65,8 @@ body {
     background-color: #043129;
     display: flex;
 
+
+
     .logo:hover {
       filter: brightness(0) saturate(100%) invert(77%) sepia(79%) saturate(292%) hue-rotate(5deg) brightness(103%) contrast(101%);
       /* Перетворює #FEF5E2 у #FFBC35 */
@@ -95,6 +97,26 @@ body {
           max-width: 140px;
           object-fit: contain;
           margin: 0;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .logo_header_container {
+          margin-left: 30px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          height: 95px;
+          width: 150px;
+          padding-left: 10px;
+          box-sizing: border-box;
+          position: relative;
+
+          .logo {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 110px;
+          }
         }
       }
     }
@@ -170,6 +192,67 @@ body {
           color: #FFBC35;
         }
       }
+
+      .burger-container {
+        position: relative;
+        align-content: center;
+        text-align: center;
+      }
+
+      .burger-icon {
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .burger-icon span {
+        height: 1px;
+        background: #FEF5E2;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      /* Анімація при відкритті */
+      .burger-icon.open span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+      }
+
+      .burger-icon.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .burger-icon.open span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .header {
+      height: 92px;
+      padding-right: 30px;
+
+      .logo_header_container {
+        margin-left: 30px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        height: 95px;
+        width: 150px;
+        padding-left: 10px;
+        box-sizing: border-box;
+        position: relative;
+
+        .logo {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          max-width: 110px;
+        }
+      }
     }
   }
 }
@@ -180,11 +263,13 @@ body {
 }
 
 .content {
-  overflow: 'auto';
+  overflow: auto;
 
   .general_page {
     background-color: #FEF5E2;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
 
     /* src/components/BackgroundVideo.css */
     .video-background-wrapper {
@@ -222,15 +307,63 @@ body {
       padding: 20px;
       text-align: center;
 
+
+
       .logo-name-container {
         padding-top: 280px;
         font-size: 20px;
+      }
+
+      @media (max-width: 1300px) {
+        .logo-name-container img {
+          width: calc(100% - 30px);
+        }
       }
 
       .logo_sub_name {
         font-family: 'Raleway SemiBold';
         font-size: 32px;
         padding-top: 40px;
+      }
+
+      @media (max-width: 1300px) {
+        .logo_sub_name {
+          font-family: 'Raleway SemiBold';
+          font-size: 16px;
+          padding-top: 24px;
+        }
+      }
+    }
+
+    @media (max-width: 1300px) {
+      .content-overlay {
+        padding: 30px;
+
+        .top_button_testing_container {
+          place-self: center;
+          padding-top: 50px;
+
+          .top_button_testing {
+            border-radius: 20px;
+            height: 40px;
+            width: 160px;
+            background-color: #FEF5E2;
+            font-size: 14px;
+            color: #043129;
+            font-family: 'Raleway Regular';
+            cursor: pointer;
+            align-content: center;
+
+            :hover {
+              color: #FFBC35;
+            }
+          }
+
+          .top_button_testing:hover {
+            color: #FFBC35;
+          }
+        }
+
       }
     }
   }
@@ -257,10 +390,19 @@ body {
     }
   }
 
+  @media (max-width: 1300px) {
+    .about_us_page {
+      height: 80%;
+      min-height: 30vh;
+
+      iframe {
+        height: 100%;
+      }
+    }
+  }
+
   .agro_ai_page {
     background-color: #043129;
-    height: 100%;
-    min-height: 100vh;
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 30px;
@@ -282,30 +424,6 @@ body {
       letter-spacing: 4px;
       margin-top: -15px;
       text-transform: uppercase;
-    }
-
-    @media (max-width: 1680px) {
-      .agro_ai_title {
-        font-family: 'Raleway Medium';
-        font-size: 90px !important;
-      }
-
-      .agro_ai_sub_title {
-        font-family: 'Raleway Medium';
-        font-size: 40px !important;
-      }
-    }
-
-    @media (max-width: 1440px) {
-      .agro_ai_title {
-        font-family: 'Raleway Medium';
-        font-size: 90px !important;
-      }
-
-      .agro_ai_sub_title {
-        font-family: 'Raleway Medium';
-        font-size: 40px !important;
-      }
     }
 
     .agro_ai_content_container {
@@ -337,48 +455,6 @@ body {
 
           .agro_ai_text_item {
             padding-bottom: 20px;
-          }
-        }
-
-        @media (max-width: 1680px) {
-          .agro_ai_text_title {
-            font-size: 40px !important;
-            border-bottom: 1px solid #FFBC35;
-            font-family: 'Raleway Medium';
-            width: 72%;
-            line-height: 40px;
-            padding-bottom: 20px;
-            letter-spacing: 6px;
-          }
-
-          .agro_ai_text {
-            font-size: 24px;
-            font-family: 'Raleway Regular';
-
-            .agro_ai_text_item {
-              padding-bottom: 15px;
-            }
-          }
-        }
-
-        @media (max-width: 1440px) {
-          .agro_ai_text_title {
-            font-size: 40px !important;
-            border-bottom: 1px solid #FFBC35;
-            font-family: 'Raleway Medium';
-            width: 72%;
-            line-height: 40px;
-            padding-bottom: 20px;
-            letter-spacing: 6px;
-          }
-
-          .agro_ai_text {
-            font-size: 24px;
-            font-family: 'Raleway Regular';
-
-            .agro_ai_text_item {
-              padding-bottom: 15px;
-            }
           }
         }
 
@@ -416,20 +492,99 @@ body {
           width: 991px;
           height: 100%;
         }
+      }
+    }
+  }
 
-        @media (max-width: 1680px) {
-          .agro_ai_photo {
-            height: 596px;
-            vertical-align: text-top;
-            width: 800px;
+  @media (min-width: 1400px) {
+    .agro_ai_page {
+      height: 100%;
+      min-height: 100vh;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    .agro_ai_page {
+      background-color: #043129;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 20px;
+      padding-bottom: 30px;
+
+      .agro_ai_title {
+        color: #FFBC35;
+        font-family: 'Raleway Medium';
+        font-size: 28px !important;
+        text-align: center;
+        letter-spacing: 6px;
+      }
+
+      .agro_ai_sub_title {
+        color: #FEF5E2;
+        font-family: 'Raleway Medium';
+        font-size: 16px !important;
+        padding-top: 10px;
+        text-align: center;
+        letter-spacing: 4px;
+        margin-top: -15px;
+        text-transform: uppercase;
+      }
+
+      .agro_ai_content_container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+
+        .agro_ai_text_container {
+          min-width: 100%;
+          max-width: 100%;
+
+          .agro_ai_text_title {
+            color: #FFBC35;
+            font-family: 'Raleway Medium';
+            font-size: 16px !important;
+            border-bottom: 1px solid #FFBC35;
+            padding-bottom: 10px;
+            letter-spacing: 6px;
           }
-        }
 
-        @media (max-width: 1440px) {
-          .agro_ai_photo {
-            height: 596px;
-            vertical-align: text-top;
-            width: 600px;
+          .agro_ai_text {
+            color: #FEF5E2;
+            font-family: 'Raleway Regular';
+            font-size: 14px !important;
+            padding-top: 20px;
+
+            .agro_ai_text_item {
+              padding-bottom: 15px;
+            }
+          }
+
+          .agro_ai_button_container {
+            .agro_ai_button {
+              display: flex;
+              border-radius: 20px;
+              height: 40px;
+              width: 200px;
+              background-color: #FFBC35;
+              font-size: 16px !important;
+              color: #FEF5E2;
+              font-family: 'Raleway Bold';
+              cursor: pointer;
+              text-align: center;
+              justify-content: space-around;
+
+              .agro_ai_button_text {
+                align-content: center;
+              }
+
+              .mvp_button {
+                width: 40px;
+              }
+            }
+
+            .agro_ai_button:hover {
+              box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+            }
           }
         }
       }
@@ -509,6 +664,86 @@ body {
           .active {
             width: 85px;
             height: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .tech_card_page {
+      height: 100%;
+      min-height: 100%;
+      background-color: #043129 !important;
+
+      .tech_card_content_container {
+        width: 100%;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-right: 30px;
+
+        .tech_card_title {
+          color: #FFBC35;
+          font-family: 'Raleway Medium';
+          font-size: 24px;
+          line-height: 40px;
+          white-space: initial;
+          letter-spacing: 5px;
+
+          &.with_change {
+            font-size: 24px;
+            letter-spacing: 5px;
+          }
+        }
+
+        .tech_card_with_img_mobile {
+          .tech_card_img_container {
+            .logo_card_img {
+              width: 100%;
+            }
+
+            .menu_slides_container {
+              /* height: 3px; */
+              /* background-color: #FEF5E2; */
+              display: flex;
+              width: 100%;
+              justify-content: center;
+            }
+
+            .menu-item {
+              height: 3px;
+              width: 5px;
+              background-color: #FEF5E2;
+              margin-right: 10px;
+              border-radius: 4px;
+            }
+
+            .active {
+              width: 15px;
+              height: 3px;
+            }
+          }
+
+          .tech_card_text_container {
+            display: block;
+
+            .tech_card_sub_text_container {
+              min-width: 100%;
+              max-width: 100%;
+              padding-top: 30px;
+              color: #FEF5E2;
+              font-family: 'Raleway Regular';
+              font-size: 14px;
+              align-content: center;
+
+              .tech_card_text_item {
+                padding-bottom: 24px;
+                letter-spacing: 3px;
+
+
+                .tech_card_text {}
+              }
+            }
           }
         }
       }
@@ -1356,6 +1591,26 @@ body {
       color: #FFBC35 !important;
     }
   }
+
+  @media (max-width: 1000px) {
+    .menu_container {
+      background-color: #043129;
+      border-radius: 20px;
+      width: 250px;
+      height: 385px;
+      align-content: center;
+      padding-left: 35px;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .menu_overlay {
+    top: 92px !important;
+  }
 }
 
 .about_us_page div {
@@ -1575,6 +1830,104 @@ body {
 
     .modal_button:hover {
       box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .modal-content {
+    position: relative;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 30px);
+    background-color: #043129;
+    border-radius: 30px;
+    text-align: center;
+    outline: none;
+    height: auto;
+
+    .MuiFormControl-root {
+      width: calc(100% - 30px);
+    }
+
+    .modal_title {
+      color: #FFBC35;
+      font-family: 'Raleway Regular';
+      font-size: 24px;
+      padding-top: 30px;
+    }
+
+    .modal_subtitle {
+      color: #FEF5E2;
+      font-family: 'Raleway Medium';
+      font-size: 14px;
+      padding: 20px 0 20px 0;
+      max-width: fit-content;
+    }
+
+    .modal_text_fields_container {
+      width: 100%;
+      place-self: center;
+
+      .modal_text_container {
+        padding-bottom: 30px;
+
+        .modal_text_field {
+          width: 100%;
+
+          div {
+            color: #FEF5E2;
+            border-color: #FEF5E2;
+            border-radius: 30px;
+            font-family: 'Raleway Light';
+            font-size: 14px;
+          }
+
+          input {
+            color: #FEF5E2;
+            border-color: #FEF5E2;
+            font-family: 'Raleway Light';
+            font-size: 14px;
+          }
+
+          label {
+            color: #FEF5E2;
+            border-color: #FEF5E2;
+            font-family: 'Raleway Light';
+            font-size: 14px;
+          }
+
+          fieldset {
+            color: #FEF5E2;
+            border-color: #FEF5E2;
+            font-family: 'Raleway Light';
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .modal_button_container {
+      padding-bottom: 20px;
+
+      .modal_button {
+        border-radius: 20px;
+        height: 40px;
+        width: 200px;
+        background-color: #FFBC35;
+        font-size: 14px;
+        color: #FEF5E2;
+        font-family: 'Raleway SemiBold';
+        cursor: pointer;
+        letter-spacing: 1px;
+        text-transform: none;
+      }
+
+      .modal_button:hover {
+        box-shadow: 4px 8px 15px rgba(255, 188, 53, 0.25);
+      }
     }
   }
 }

@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import arrow from '../assets/images/arrow.svg';
 import agroAi from '../assets/images/agro_ai.jpg';
 import { useTranslation } from "react-i18next";
+import { useDeviceType } from '../hooks/useDeviceType';
 
 interface IAgroAiProps {
   handleOpenModal: () => void;
@@ -9,6 +10,7 @@ interface IAgroAiProps {
 
 const AgroAi = forwardRef<HTMLDivElement, IAgroAiProps>((props, ref) => {
   const { t, i18n } = useTranslation();
+  const deviceType = useDeviceType();
 
   return <div ref={ref} className="agro_ai_page">
     <div className='agro_ai_title'>{t('AgroAssistantAI')}</div>
@@ -30,9 +32,13 @@ const AgroAi = forwardRef<HTMLDivElement, IAgroAiProps>((props, ref) => {
             <img className="mvp_button" src={arrow} alt="MVP" /></div>
         </div>
       </div>
-      <div className='agro_ai_photo_container'>
-        <img className="agro_ai_photo" src={agroAi} alt="Agro AI" />
-      </div>
+      {deviceType === "desktop" ? (
+        <div className='agro_ai_photo_container'>
+          <img className="agro_ai_photo" src={agroAi} alt="Agro AI" />
+        </div>
+      ) : (
+        <span></span>
+      )}
     </div>
   </div>;
 });

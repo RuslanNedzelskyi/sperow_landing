@@ -20,6 +20,7 @@ import Partners from './components/partners';
 import Command from './components/command';
 import ModalMvp from './components/modal_mvp';
 import { useTranslation } from "react-i18next";
+import { useDeviceType } from './hooks/useDeviceType';
 
 const theme = createTheme({
   palette: {
@@ -91,6 +92,7 @@ function App() {
   const [hasReachedBottom, setHasReachedBottom] = useState(false); // Чи користувач досягав низу
   const [open, setOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const deviceType = useDeviceType();
 
   const handleCloseMenuOverlay = () => {
     setOpenMenu(!openMenu);
@@ -207,41 +209,70 @@ function App() {
                   <img onClick={() => scrollToSection(1)} className="logo" src={logoLight} alt="Sperow Logo" />
                 </div>
               </div>
-              <div className="header_right_side">
-                <div className="dropdown_lang_container" ref={dropdownRef}>
-                  <div onClick={handleToggleMenu} className="selected_lang">
-                    {selectedLanguage.label}
+              {deviceType === "mobile" ? (
+                <div className="header_right_side">
+                  <div className="dropdown_lang_container" ref={dropdownRef}>
+                    <div onClick={handleToggleMenu} className="selected_lang">
+                      {selectedLanguage.label}
+                    </div>
+                    <div className={menuLangOpen ? 'lang_menu opened' : 'lang_menu'}>
+                      {langCurrentList.map((lang) => (
+                        <div
+                          key={lang.code}
+                          onClick={() => handleLanguageChange(lang)}
+                          className="lang_item"
+                        >
+                          {lang.label}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className={menuLangOpen ? 'lang_menu opened' : 'lang_menu'}>
-                    {langCurrentList.map((lang) => (
-                      <div
-                        key={lang.code}
-                        onClick={() => handleLanguageChange(lang)}
-                        className="lang_item"
-                      >
-                        {lang.label}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className='top_button_testing_container'>
-                  <div className='top_button_testing' onClick={handleOpenModal}>
-                    {t("Testing")}
-                  </div>
-                </div>
-                <div className='top_button_menu_container'>
-                  <div className='top_button_menu' onClick={handleCloseMenuOverlay}>
-                    <div className='button_menu_with_hamburger'>
-                      {t("Menu")}
-                      {openMenu ? (
-                        <CloseIcon />
-                      ) : (
-                        <MenuIcon className='menu_icon' />
-                      )}
+
+                  <div className="burger-container" onClick={handleCloseMenuOverlay}>
+                    <div className="burger-icon">
+                      <span></span>
+                      <span></span>
+                      <span></span>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div className="header_right_side">
+                  <div className="dropdown_lang_container" ref={dropdownRef}>
+                    <div onClick={handleToggleMenu} className="selected_lang">
+                      {selectedLanguage.label}
+                    </div>
+                    <div className={menuLangOpen ? 'lang_menu opened' : 'lang_menu'}>
+                      {langCurrentList.map((lang) => (
+                        <div
+                          key={lang.code}
+                          onClick={() => handleLanguageChange(lang)}
+                          className="lang_item"
+                        >
+                          {lang.label}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className='top_button_testing_container'>
+                    <div className='top_button_testing' onClick={handleOpenModal}>
+                      {t("Testing")}
+                    </div>
+                  </div>
+                  <div className='top_button_menu_container'>
+                    <div className='top_button_menu' onClick={handleCloseMenuOverlay}>
+                      <div className='button_menu_with_hamburger'>
+                        {t("Menu")}
+                        {openMenu ? (
+                          <CloseIcon />
+                        ) : (
+                          <MenuIcon className='menu_icon' />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </header>
           <main>
