@@ -5,6 +5,7 @@ import instagram from '../assets/images/instagram.svg';
 import facebook from '../assets/images/facebook.svg';
 import youtube from '../assets/images/youtube.svg';
 import { useTranslation } from "react-i18next";
+import { useDeviceType } from '../hooks/useDeviceType';
 
 interface IFooterProps {
   scrollToSection: (id: number) => void;
@@ -39,6 +40,7 @@ const secondMenu: IMenuItem[] = [
 // const Footer = forwardRef<HTMLDivElement, IFooterProps>((props, ref) => {
 const Footer = forwardRef<HTMLDivElement, IFooterProps>((props) => {
   const { t, i18n } = useTranslation();
+  const deviceType = useDeviceType();
 
   const handleScrollToSerction = (idSection: number) => {
     props.scrollToSection(idSection);
@@ -56,18 +58,24 @@ const Footer = forwardRef<HTMLDivElement, IFooterProps>((props) => {
           <div className='phone_number_information'>+380950188344</div>
         </div>
       </div>
-      <div className='contact_menu_container'>
-        <div className='first_menu_container'>
-          {
-            firstMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{t(item.name)}</div>)
-          }
-        </div>
-        <div className='second_menu_container'>
-          {
-            secondMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{t(item.name)}</div>)
-          }
-        </div>
-      </div>
+      {
+        deviceType === 'desktop' ? (
+          <div className='contact_menu_container'>
+            <div className='first_menu_container'>
+              {
+                firstMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{t(item.name)}</div>)
+              }
+            </div>
+            <div className='second_menu_container'>
+              {
+                secondMenu.map(item => <div onClick={() => handleScrollToSerction(item.id)} className='container_menu_item'>{t(item.name)}</div>)
+              }
+            </div>
+          </div>
+        ) : (
+          <div></div>
+        )
+      }
       <div className='contact_testing_button_container'>
         <div className='contact_testing_button' onClick={props.handleOpenModal}>{t('Testing')}</div>
       </div>

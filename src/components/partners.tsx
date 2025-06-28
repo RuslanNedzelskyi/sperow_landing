@@ -8,6 +8,8 @@ import kivi from '../assets/images/kivi.svg';
 import profspilka from '../assets/images/profspilka.svg';
 import servig from '../assets/images/servig.svg';
 import { useTranslation } from "react-i18next";
+import { useDeviceType } from '../hooks/useDeviceType';
+import { useSwipeable } from 'react-swipeable';
 
 const images = [
   armar,
@@ -19,39 +21,50 @@ const images = [
 ];
 
 const Partners = forwardRef<HTMLDivElement>((props, ref) => {
-const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const deviceType = useDeviceType();
 
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
 
   const totalImages = images.length;
-  const imagesPerView = 2; // Скільки картинок видно одночасно
+  const imagesPerView = deviceType === 'mobile' ? 1 : 2; // Скільки картинок видно одночасно
 
   const scrollLeft = () => {
     // Якщо досягли початку, переходимо до кінця
-    const newIndex = currentIndex === 0 ? totalImages - imagesPerView : currentIndex - 1;
-    setCurrentIndex(newIndex);
+
+    // const after = deviceType === 'mobile' ? 0 : 1;
+
+    const newIndex = activeSlide === 0 ? totalImages - imagesPerView : activeSlide - 1;
+    setActiveSlide(newIndex);
     setIsUserInteracting(true);
   };
 
   const scrollRight = () => {
     // Якщо досягли кінця, переходимо до початку
-    const newIndex = currentIndex === totalImages - imagesPerView ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
+    // const after = deviceType === 'mobile' ? 0 : 1;
+
+    const newIndex = activeSlide === totalImages - imagesPerView ? 0 : activeSlide + 1;
+    setActiveSlide(newIndex);
     setIsUserInteracting(true);
   };
 
   // Оновлюємо позицію скролу при зміні currentIndex
   useEffect(() => {
     if (scrollRef.current) {
-      const imageWidth = scrollRef.current.querySelector(".first_partner_container")?.clientWidth || 650;
+
+      // const windowWidth = window.innerWidth;
+      const imageWidth = deviceType === 'desktop' ? 750 : 360;
+
+      const scrollTo = activeSlide * imageWidth;
+      // const imageWidth = scrollRef.current.querySelector(".first_partner_container")?.clientWidth || 650;
       scrollRef.current.scrollTo({
-        left: currentIndex * imageWidth,
+        left: scrollTo,
         behavior: "smooth",
       });
     }
-  }, [currentIndex]);
+  }, [activeSlide]);
 
   useEffect(() => {
     let autoScrollInterval: NodeJS.Timeout;
@@ -78,6 +91,12 @@ const { t, i18n } = useTranslation();
     return () => clearTimeout(resetInteractionTimeout);
   }, [isUserInteracting]);
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => setActiveSlide((prev) => (prev + 1) % images.length),
+    onSwipedRight: () => setActiveSlide((prev) => (prev - 1 + images.length) % images.length),
+    trackMouse: true,
+  });
+
   return (
     <div ref={ref} className="partners_page">
       <h2 className="partners_title">{t('Trusted_Partners')}</h2>
@@ -87,9 +106,16 @@ const { t, i18n } = useTranslation();
         </button>
         <div className="partners_container" ref={scrollRef}>
           {images.map((image, index) => (
-            <div key={index} className="first_partner_container">
-              <img src={image} alt={`Partner ${index + 1}`} className={index === 5 || index === 3 || index === 2 ? "scroll_image with_width" : "scroll_image"} />
-            </div>
+            deviceType === 'mobile' ? (
+              <div className="slider-container first_partner_container" {...swipeHandlers}>
+                {/* <img src={images[activeSlide]} alt="Partner" className={index === 5 || index === 3 || index === 2 ? "logo_card_img slider-image scroll_image with_width" : "logo_card_img slider-image scroll_image"} /> */}
+                <img src={images[activeSlide]} alt="Partner" className={index === 5 || index === 3 || index === 2 ? "scroll_image with_width" : "scroll_image"} />
+              </div>
+            ) : (
+              <div key={index} className="first_partner_container">
+                <img src={image} alt={`Partner ${index + 1}`} className={index === 5 || index === 3 || index === 2 ? "scroll_image with_width" : "scroll_image"} />
+              </div>
+            )
           ))}
         </div>
         <button className="arrow_right_img_container" onClick={scrollRight}>
