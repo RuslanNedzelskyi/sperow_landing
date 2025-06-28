@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sperow_landing/static/css/main.191ab607.css",
-    "main.js": "/sperow_landing/static/js/main.1a500f03.js",
+    "main.css": "/sperow_landing/static/css/main.aaaa24d5.css",
+    "main.js": "/sperow_landing/static/js/main.e1266d8a.js",
     "static/media/sperow_background_video.mp4": "/sperow_landing/static/media/sperow_background_video.cabc2d431064539a7a98.mp4",
     "static/media/advantages.jpg": "/sperow_landing/static/media/advantages.2a93137af7201bac0641.jpg",
     "static/media/agro_ai.jpg": "/sperow_landing/static/media/agro_ai.401ea3bf3c74d5115a7f.jpg",
@@ -66,11 +66,11 @@
     "static/media/arrow_left.svg": "/sperow_landing/static/media/arrow_left.bfa76196317e546d48cc1a938fcb0d3d.svg",
     "static/media/arrow_right.svg": "/sperow_landing/static/media/arrow_right.44e6d4713f93ea18113c4a33b7be788d.svg",
     "static/media/arrow.svg": "/sperow_landing/static/media/arrow.92b79be073fb329c85b1f304daea37e8.svg",
-    "main.191ab607.css.map": "/sperow_landing/static/css/main.191ab607.css.map",
-    "main.1a500f03.js.map": "/sperow_landing/static/js/main.1a500f03.js.map"
+    "main.aaaa24d5.css.map": "/sperow_landing/static/css/main.aaaa24d5.css.map",
+    "main.e1266d8a.js.map": "/sperow_landing/static/js/main.e1266d8a.js.map"
   },
   "entrypoints": [
-    "static/css/main.191ab607.css",
-    "static/js/main.1a500f03.js"
+    "static/css/main.aaaa24d5.css",
+    "static/js/main.e1266d8a.js"
   ]
 }
